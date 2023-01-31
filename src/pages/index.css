@@ -14,6 +14,7 @@ body {
 .topo {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin: 15px;
 }
 
@@ -25,22 +26,24 @@ body {
 
 .logo-cooper {
   fill: #4AC959;
-  height: 7vh;
+  width: 43.54px;
+  height: 50px;
   position: static;
 }
 
 .logo-title {
   position: relative;
   font-family: Arial, Helvetica, sans-serif;
-  right: 15vw;
+  right: -1vw;
 }
 
 .login-button {
   background-color: black;
   /* border-radius: 10px; */
-  height: 4vh;
-  width: 30vw;
+  height: 40px;
+  width: 120px;
   color: white;
+  top: 54px;
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 600;
