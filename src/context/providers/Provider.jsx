@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import PropTypes from 'prop-types';
 import Context from '../Context';
 
 function Provider({ children }) {
@@ -15,3 +16,7 @@ function Provider({ children }) {
 }
 
 export default Provider;
+
+Provider.propTypes = {
+  children: PropTypes.node.isRequired,
+};

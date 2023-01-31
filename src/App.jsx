@@ -1,45 +1,19 @@
-import { useState } from 'react'
-import logo from './logo.svg'
-import './App.css'
+import React from 'react';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type="button" onClick={() => setCount((count) => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className="App-link"
-            href="https://vitejs.dev/guide/features.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
-  )
+    <header>
+      <div className="topo">
+        <div className="logo">
+          <svg className="logo-cooper" viewBox="0 0 900 500" xmlns="http://www.w3.org/2000/svg"><path d="M351.1 448c-4.797 0-9.688-1.094-14.28-3.375l-320-160C6.844 279.2 0 268.1 0 256c0-12.13 6.844-23.18 17.69-28.62l320-160c15.88-7.875 35.05-1.5 42.94 14.31c7.906 15.81 1.5 35.03-14.31 42.94L103.5 256l262.8 131.4c15.81 7.906 22.22 27.12 14.31 42.94C375 441.5 363.7 448 351.1 448z" /></svg>
+
+          <h1 className="logo-title">coopers</h1>
+        </div>
+        <button type="button" className="login-button">entrar</button>
+      </div>
+    </header>
+  );
 }
 
-export default App
+export default App;
