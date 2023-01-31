@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,500;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 header {
   position: static;
@@ -39,7 +40,7 @@ body {
 
 .login-button {
   background-color: black;
-  /* border-radius: 10px; */
+  border: none;
   height: 40px;
   width: 120px;
   color: white;
@@ -48,4 +49,48 @@ body {
   font-style: normal;
   font-weight: 600;
   font-size: large;
+}
+
+.Title {
+  position: absolute;
+  margin-left: 15%;
+}
+
+.title-first-text {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 64px;
+  margin-bottom: -40px;
+}
+
+.title-second-text {
+  font-family: 'Montserrat';
+  color: #4AC959;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 37px;
+  line-height: 44px;
+}
+
+.title-third-text {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 24px;
+}
+
+.title-button {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 600;
+  background-color: #4AC959;
+  color:  #FFFFFF;
+  text-align: center;
+  border-radius: 10px;
+  border: none;
+  width: 250px;
+  height: 64px;
 }
