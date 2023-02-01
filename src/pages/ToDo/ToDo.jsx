@@ -7,19 +7,43 @@ export default function ToDo() {
   const [todoTasks, setTodoTasks] = useState([
     {
       id: 1,
-      task: 'Tarefa',
+      task: 'Develop the To-do list page',
     },
     {
       id: 2,
-      task: 'Tarefa2',
+      task: 'Create the drag-and-drop function',
     },
     {
       id: 3,
-      task: 'Tarefa3',
+      task: 'Add new tasks',
+    },
+    {
+      id: 3,
+      task: 'Add new tasks',
+    },
+    {
+      id: 3,
+      task: 'Add new tasks',
+    },
+    {
+      id: 3,
+      task: 'Add new tasks',
+    },
+    {
+      id: 3,
+      task: 'Add new tasks',
+    },
+    {
+      id: 3,
+      task: 'Add new tasks',
     },
   ]);
 
   const [doneBoard, setDoneBoard] = useState([]);
+
+  const addTaskToDoneBoard = (id) => {
+    console.log(id);
+  };
 
   const [{ isOver }, drop] = useDrop(() => ({
     accept: 'div',
@@ -28,10 +52,6 @@ export default function ToDo() {
       isOver: !!monitor.isOver(),
     }),
   }));
-
-  const addTaskToDoneBoard = (id) => {
-    console.log(id);
-  };
 
   return (
     <>
@@ -43,7 +63,7 @@ export default function ToDo() {
       </div>
 
       <div className="board-todo-tasks">
-        <div className="top-border" />
+        <div className="top-border-todo" />
         <h3 className="board-todo-title">To-do</h3>
 
         <text className="board-todo-head">
@@ -54,6 +74,7 @@ export default function ToDo() {
         {todoTasks.map((task) => (
           <Task text={task.task} id={task.id} key={task.id} />
         ))}
+        <button type="button" className="erase-all-button">erase all</button>
 
         {/* {todoTasks.map((task) => (
           <div className="board-todo-list">
@@ -64,10 +85,21 @@ export default function ToDo() {
       </div>
 
       <div className="board-done-tasks" ref={drop}>
+        <div className="top-border-done" />
+        <h3 className="board-done-title">Done</h3>
+
+        <text className="board-done-head">
+          Congratulations!
+        </text>
+
+        <text className="board-how-many-tasks-done-text">{`You have done ${doneBoard.length} tasks`}</text>
+
         {doneBoard.map((task) => (
           <Task text={task.task} id={task.id} key={task.id} />
         ))}
+        <button type="button" className="erase-all-button">erase all</button>
       </div>
+
     </>
 
   );
