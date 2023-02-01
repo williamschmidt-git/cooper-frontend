@@ -30,3 +30,54 @@
   color: white;
   transform: skewY(8deg);
 }
+
+.top-border {
+  height: 10px;
+  width: 100%;
+  background-color: #E88D39;
+  margin-bottom: -20px;
+}
+
+.board-todo-title {
+  text-align: center;
+  font-family: 'Poppins';
+  font-size: 30px;
+  font-weight: 600;
+  margin-bottom: -2px;
+}
+
+.board-todo-head {
+  font-weight: 400;
+  font-family: 'Montserrat';
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-items: center;
+}
+
+.board-todo-tasks {
+  position: relative;
+  width: 160px;
+  height: 300px;
+  top: 750px;
+  left: 20px;
+  box-shadow: 0px 4px 12px rgba(66, 66, 66, 0.198454);
+}
+
+.board-todo-task{
+  font-family: 'Montserrat';
+  font-weight: 400;
+}
+
+/* .board-todo-list {
+  display: flex;
+} */
+
+/* .board-done-tasks {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  top: 750px;
+  border: 2px solid pink;
+} */
