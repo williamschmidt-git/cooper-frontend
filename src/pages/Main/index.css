@@ -94,3 +94,35 @@ body {
   width: 250px;
   height: 64px;
 }
+
+.slide-background {
+  /* display: flex; */
+  position: absolute;
+  top: 450px;
+  margin-left: 15%;
+}
+
+.logo-background {
+ height: 300px;
+ width: 250px;
+ z-index: 0;
+}
+
+.pic-background {
+  position: absolute;
+  height: 180px;
+  width: 170px;
+  left: 52px;
+  top: 57px;
+  z-index: 1;
+}
+
+.scroll-down-button {
+  display: none;
+  position: absolute;
+  border: none;
+  height: 1px;
+  width: 40px;
+  top: 748px;
+  left: 50%;
+}
