@@ -44,6 +44,15 @@ export default function ToDo() {
     }
   };
 
+  const handleEraseButton = (e) => {
+    if (e.target.parentNode.className.includes('todo')) {
+      setTodoTasks([]);
+    }
+    if (e.target.parentNode.className.includes('done')) {
+      setDoneBoard([]);
+    }
+  };
+
   const handleOnDragStart = (result) => {
     // console.log(result);
   };
@@ -85,7 +94,7 @@ export default function ToDo() {
                     />
                   ))}
                 </div>
-                <button type="button" className="erase-all-button">erase all</button>
+                <button type="button" className="erase-all-button" onClick={(e) => handleEraseButton(e)}>erase all</button>
               </div>
 
               <Droppable droppableId="doneTasks">
@@ -109,7 +118,7 @@ export default function ToDo() {
                         <Task text={task.task} id={task.id} key={task.id} index={index} />
                       ))}
                     </div>
-                    <button type="button" className="erase-all-button">erase all</button>
+                    <button type="button" className="erase-all-button" onClick={(e) => handleEraseButton(e)}>erase all</button>
                   </div>
                 )}
               </Droppable>
