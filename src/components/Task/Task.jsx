@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unknown-property */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import PropTypes from 'prop-types';
@@ -8,14 +9,16 @@ export default function Task({
   text, id, key, index,
 }) {
   return (
-
     <Draggable draggableId={id} index={index}>
-      {(provided) => (
+      {(provided, snapshot) => (
         <div
-          className="board-todo-task"
+          className={snapshot.isDragging ? 'board-todo-task-dragging' : 'board-todo-task'}
           {...provided.dragHandleProps}
           {...provided.draggableProps}
           ref={provided.innerRef}
+          // style={{
+          //   backgroundColor: snapshot.isDragging ? 'lightgreen' : 'white',
+          // }}
         >
           <input type="radio" id={id} />
           <label

@@ -7,20 +7,46 @@ import Task from '../../components/Task/Task';
 export default function ToDo() {
   const [todoTasks, setTodoTasks] = useState([
     {
-      id: 1,
+      id: '1',
       task: 'Develop the To-do list page',
     },
     {
-      id: 2,
+      id: '2',
       task: 'Create the drag-and-drop function',
     },
     {
-      id: 3,
+      id: '3',
       task: 'Add new tasks',
     },
   ]);
 
   const [doneBoard, setDoneBoard] = useState([]);
+
+  const handleOnDragEnd = (result) => {
+    if (!result.destination) return;
+    // if (result.source.droppableId === 'doneTasks') return;
+
+    if (result.destination.droppableId === result.source.droppableId) {
+      const items = Array.from(todoTasks);
+      const [reorderedItem] = items.splice(result.source.index, 1);
+      items.splice(result.destination.index, 0, reorderedItem);
+
+      setTodoTasks(items);
+    }
+
+    if (result.destination.droppableId === 'doneTasks') {
+      const items = Array.from(todoTasks);
+      const [removedItem] = items.splice(result.source.index, 1);
+      items.splice(result.destination.index, 1, removedItem);
+      setDoneBoard([...doneBoard, removedItem]);
+      const newArr = todoTasks.filter((e) => e !== removedItem);
+      setTodoTasks(newArr);
+    }
+  };
+
+  const handleOnDragStart = (result) => {
+    // console.log(result);
+  };
 
   return (
     <>
@@ -31,12 +57,12 @@ export default function ToDo() {
         </p>
       </div>
 
-      <DragDropContext>
+      <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>
 
         <Droppable droppableId="tasks">
-          {(provided) => (
+          {(provided, snapshot) => (
             <div className="wrapper-todo-board">
-              <div className="board-todo-tasks">
+              <div className={snapshot.isDraggingOver ? 'board-todo-tasks-active' : 'board-todo-tasks'}>
                 <div className="top-border-todo" />
                 <h3 className="board-todo-title">To-do</h3>
 
@@ -45,7 +71,10 @@ export default function ToDo() {
                   Start doing.
                 </text>
 
-                <div {...provided.droppableProps} ref={provided.innerRef}>
+                <div
+                  {...provided.droppableProps}
+                  ref={provided.innerRef}
+                >
                   {provided.placeholder}
                   {todoTasks.map((task, index) => (
                     <Task
@@ -54,39 +83,39 @@ export default function ToDo() {
                       key={task.id}
                       index={index}
                     />
-
                   ))}
                 </div>
                 <button type="button" className="erase-all-button">erase all</button>
-
-                {/* {todoTasks.map((task) => (
-          <div className="board-todo-list">
-            <input type="radio" id={task.id} />
-            <label htmlFor={task.id}>{task.task}</label>
-          </div>
-        ))} */}
               </div>
 
-              <div className="board-done-tasks">
-                <div className="top-border-done" />
-                <h3 className="board-done-title">Done</h3>
+              <Droppable droppableId="doneTasks">
+                {(innerProvided, innerSnapshot) => (
+                  <div className={innerSnapshot.isDraggingOver ? 'board-done-tasks-active' : 'board-done-tasks'}>
+                    <div className="top-border-done" />
+                    <h3 className="board-done-title">Done</h3>
 
-                <text className="board-done-head">
-                  Congratulations!
-                </text>
+                    <text className="board-done-head">
+                      Congratulations!
+                    </text>
 
-                <text className="board-how-many-tasks-done-text">{`You have done ${doneBoard.length} tasks`}</text>
+                    <text className="board-how-many-tasks-done-text">{`You have done ${doneBoard.length} tasks`}</text>
 
-                {doneBoard.map((task) => (
-                  <Task text={task.task} id={task.id} key={task.id} />
-                ))}
-                <button type="button" className="erase-all-button">erase all</button>
-              </div>
+                    <div
+                      {...innerProvided.droppableProps}
+                      ref={innerProvided.innerRef}
+                    >
+                      {innerProvided.placeholder}
+                      {doneBoard.map((task, index) => (
+                        <Task text={task.task} id={task.id} key={task.id} index={index} />
+                      ))}
+                    </div>
+                    <button type="button" className="erase-all-button">erase all</button>
+                  </div>
+                )}
+              </Droppable>
             </div>
           )}
-
         </Droppable>
-
       </DragDropContext>
     </>
 
