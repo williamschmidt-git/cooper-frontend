@@ -10,6 +10,16 @@
   top: 700px
 }
 
+.wrapper-todo-board {
+  display: flex;
+  position: relative;
+  top: 800px;
+  max-width: 100%;
+  max-height: 90%;
+  align-items: flex-start;
+  justify-content: space-around;
+}
+
 .todo-title {
   color: white;
   font-family: 'Poppins';
@@ -54,19 +64,21 @@
   display: flex;
   align-items: center;
   justify-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 45px;
 }
 
 .board-todo-tasks {
   padding: 1px;
   position: relative;
   height: auto;
-  min-height: 150px;
+  min-height: 190px;
   width: 180px;
   /* min-width: 160px; */
-  top: 750px;
-  left: 7px;
+  /* left: 7px; */
   box-shadow: 0px 4px 12px rgba(66, 66, 66, 0.198454);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .board-todo-task {
@@ -86,7 +98,7 @@
   height: auto;
   min-height: 30px;
   text-align: center;
-  left: 25px;
+  /* left: 25px; */
 }
 
 /* .board-todo-list {
@@ -94,17 +106,17 @@
 } */
 
 .board-done-tasks {
-  /* display: none; */
   padding: 1px;
   position: relative;
   height: auto;
-  min-height: 150px;
-  width: 160px;
-  min-width: auto;
-  min-width: 160px;
-  top: 327px;
-  left: 194px;
+  min-height: 190px;
+  width: 180px;
+  /* min-width: 160px; */
+  /* left: 7px; */
   box-shadow: 0px 4px 12px rgba(66, 66, 66, 0.198454);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .top-border-done {
@@ -126,10 +138,8 @@
   font-weight: 400;
   font-family: 'Montserrat';
   text-align: center;
+  padding: 5px;
   font-size: 20px;
-  display: flex;
-  align-items: center;
-  justify-items: center;
 }
 
 .board-how-many-tasks-done-text {
