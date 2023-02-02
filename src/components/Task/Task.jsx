@@ -6,7 +6,7 @@ import './index.css';
 import { Draggable } from 'react-beautiful-dnd';
 
 export default function Task({
-  text, id, key, index,
+  text, id, key, index, droppableId,
 }) {
   return (
     <Draggable draggableId={id} index={index}>
@@ -16,17 +16,30 @@ export default function Task({
           {...provided.dragHandleProps}
           {...provided.draggableProps}
           ref={provided.innerRef}
-          // style={{
-          //   backgroundColor: snapshot.isDragging ? 'lightgreen' : 'white',
-          // }}
         >
-          <input type="radio" id={id} />
-          <label
-            htmlFor={id}
-            className="board-todo-task-text"
-          >
-            {text}
-          </label>
+          {droppableId === 'tasks' ? (
+            <>
+              <input type="radio" id={id} />
+              <label
+                htmlFor={id}
+                className="board-todo-task-text"
+              >
+                {text}
+              </label>
+
+            </>
+          ) : (
+            <>
+              <input type="radio" id={id} checked />
+              <label
+                htmlFor={id}
+                className="board-todo-task-text"
+              >
+                {text}
+              </label>
+
+            </>
+          )}
         </div>
       )}
 

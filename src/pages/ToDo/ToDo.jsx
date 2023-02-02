@@ -36,6 +36,10 @@ export default function ToDo() {
 
     if (result.destination.droppableId === 'doneTasks') {
       const items = Array.from(todoTasks);
+      if (result.destination.droppableId === result.source.droppableId) {
+        return;
+      }
+
       const [removedItem] = items.splice(result.source.index, 1);
       items.splice(result.destination.index, 1, removedItem);
       setDoneBoard([...doneBoard, removedItem]);
@@ -53,10 +57,6 @@ export default function ToDo() {
     }
   };
 
-  const handleOnDragStart = (result) => {
-    // console.log(result);
-  };
-
   return (
     <>
       <div className="todo-box">
@@ -66,7 +66,7 @@ export default function ToDo() {
         </p>
       </div>
 
-      <DragDropContext onDragEnd={handleOnDragEnd} onDragStart={handleOnDragStart}>
+      <DragDropContext onDragEnd={handleOnDragEnd}>
 
         <Droppable droppableId="tasks">
           {(provided, snapshot) => (
@@ -91,6 +91,7 @@ export default function ToDo() {
                       id={task.id.toString()}
                       key={task.id}
                       index={index}
+                      droppableId="tasks"
                     />
                   ))}
                 </div>
@@ -115,7 +116,7 @@ export default function ToDo() {
                     >
                       {innerProvided.placeholder}
                       {doneBoard.map((task, index) => (
-                        <Task text={task.task} id={task.id} key={task.id} index={index} />
+                        <Task text={task.task} id={task.id} key={task.id} index={index} droppableId="doneTasks" />
                       ))}
                     </div>
                     <button type="button" className="erase-all-button" onClick={(e) => handleEraseButton(e)}>erase all</button>
