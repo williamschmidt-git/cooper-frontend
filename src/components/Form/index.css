@@ -12,6 +12,7 @@
 }
 
 .form-contact > label > input {
+  display: block;
   padding: 9px;
   border: 1px solid #06152B;
   border-radius: 4px;
@@ -20,6 +21,7 @@
 }
 
 .form-contact > label > textarea {
+  display: block;
   padding: 9px;
   border: 1px solid #06152B;
   border-radius: 4px;
@@ -29,12 +31,12 @@
 .message-input {
   height: 160px;
   padding: 9px;
-  color: black ;
+  color: black;
 }
 
-input, label, textarea {
+/* input, label, textarea {
   display: block;
-}
+} */
 
 .send-message-button {
   border: none;
