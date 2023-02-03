@@ -34,22 +34,9 @@ export default function SliderComponent() {
     <div>
       <BackgroundPanelSlider />
       <Slider {...settings} className="slider-wrapper">
-
-        {/* <Cards />
-
-        <Cards />
-
-        <Cards /> */}
-        {/*
-        <Cards />
-
-        <Cards />
-
-        <Cards /> */}
         {content.map((e) => (
           <Cards text={e.text} src={e.img} />
         ))}
-
       </Slider>
     </div>
   );
