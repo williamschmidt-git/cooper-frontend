@@ -1,5 +1,6 @@
 import React from 'react';
 import Main from './pages/Main/Main';
+import Slider from './pages/Slider/Slider';
 import ToDo from './pages/ToDo/ToDo';
 
 function App() {
@@ -7,6 +8,7 @@ function App() {
     <>
       <Main />
       <ToDo />
+      <Slider />
     </>
   );
 }

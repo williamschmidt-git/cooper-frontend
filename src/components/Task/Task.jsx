@@ -18,7 +18,7 @@ export default function Task({
           ref={provided.innerRef}
         >
           {droppableId === 'tasks' ? (
-            <>
+            <div key={key}>
               <input type="radio" id={id} />
               <label
                 htmlFor={id}
@@ -27,9 +27,9 @@ export default function Task({
                 {text}
               </label>
 
-            </>
+            </div>
           ) : (
-            <>
+            <div key={key}>
               <input type="radio" id={id} checked />
               <label
                 htmlFor={id}
@@ -38,7 +38,7 @@ export default function Task({
                 {text}
               </label>
 
-            </>
+            </div>
           )}
         </div>
       )}
@@ -53,4 +53,5 @@ Task.propTypes = {
   key: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
+  droppableId: PropTypes.string.isRequired,
 };
