@@ -10,17 +10,6 @@
   top: 700px;
 }
 
-.wrapper-todo-board {
-  display: flex;
-  position: relative;
-  flex-grow: 1;
-  top: 800px;
-  /* max-width: 100%; */
-  /* max-height: 90%; */
-  align-items: flex-start;
-  justify-content: space-around;
-}
-
 .todo-title {
   color: white;
   font-family: 'Poppins';
@@ -47,6 +36,17 @@
   width: 100%;
   background-color: #E88D39;
   margin-bottom: -20px;
+}
+
+.wrapper-todo-board {
+  display: flex;
+  position: relative;
+  flex-grow: 1;
+  top: 800px;
+  /* max-width: 100%; */
+  /* max-height: 90%; */
+  align-items: flex-start;
+  justify-content: space-around;
 }
 
 .board-todo-title {
