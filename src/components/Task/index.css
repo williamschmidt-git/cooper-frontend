@@ -19,8 +19,11 @@
   font-family: 'Montserrat';
   font-weight: 400;
   text-align: start;
-  padding: 3px 1px;
+  padding: 4px 1px;
   margin: 2px;
   max-width: 150px;
-  /* background-color: white; */
+}
+
+.input-wrapper {
+  margin-bottom: 4px;
 }

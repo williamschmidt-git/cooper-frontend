@@ -8,8 +8,6 @@ import Provider from './context/providers/Provider';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <Provider>
-
     <App />
-
   </Provider>,
 );

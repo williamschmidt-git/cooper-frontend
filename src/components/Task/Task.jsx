@@ -18,7 +18,7 @@ export default function Task({
           ref={provided.innerRef}
         >
           {droppableId === 'tasks' ? (
-            <div key={key}>
+            <div key={key} className="input-wrapper">
               <input type="radio" id={id} />
               <label
                 htmlFor={id}
