@@ -44,7 +44,7 @@
   height: 64px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 601px) {
   .Title {
     display: flex;
     align-items: baseline;
