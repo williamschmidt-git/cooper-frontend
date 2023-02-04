@@ -3,9 +3,9 @@ import './index.css';
 
 export default function BackgroundPanelSlider() {
   return (
-    <div className="panel-wrapper">
-      <div className="background-panel" />
+    <div className="background-panel">
       <span>good things</span>
     </div>
+
   );
 }

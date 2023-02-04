@@ -13,17 +13,18 @@ footer {
   margin-top: 25px;
 }
 
-footer::after {
+/* footer::after {
   border: none;
   position:absolute;
   top:-30px;
   content:"";
   height: 0; 
   width: 0px;
-  border-right: 500px solid black;
-  border-top: 30px solid transparent;
+  /* max-width: 10%; */
+  /* border-right: 500px solid black;
+  border-top: 30px solid transparent; */
 
-}
+/* } */
 
 .footer-notes {
   text-align: center;

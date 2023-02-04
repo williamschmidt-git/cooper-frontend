@@ -31,13 +31,13 @@ export default function SliderComponent() {
   };
 
   return (
-    <div>
+    <>
       <BackgroundPanelSlider />
       <Slider {...settings} className="slider-wrapper">
         {content.map((e) => (
           <Cards text={e.text} src={e.img} />
         ))}
       </Slider>
-    </div>
+    </>
   );
 }

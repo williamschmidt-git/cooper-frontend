@@ -5,16 +5,18 @@
   height: 200px;
   background-color: #4AC959;
   position: relative;
-  top: 820px;
+  top: 570px;
   border-radius: 4px;
   left: 7px;
+  display: flex;
+  align-items: flex-start;
+  padding: 10px;
 }
 
 span {
   font-family: 'Montserrat';
   font-weight: 700;
   font-size: 20px;
-  position: relative;
   top: 660px;
   left: 40px;
   color: white;
