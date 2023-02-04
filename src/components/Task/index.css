@@ -1,17 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 .board-todo-task {
   display: flex;
   align-items: center;
+  /* background-color: white; */
+  border-radius: 2px;
+}
+
+.board-todo-task-dragging {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 2px;
 }
 
 .board-todo-task-text {
   font-family: 'Montserrat';
   font-weight: 400;
   text-align: start;
-  padding: 3px 1px;
+  padding: 4px 1px;
   margin: 2px;
   max-width: 150px;
+}
+
+.input-wrapper {
+  margin-bottom: 4px;
 }

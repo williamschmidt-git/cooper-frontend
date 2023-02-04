@@ -1,0 +1,21 @@
+.slide-background {
+  /* display: flex; */
+  position: absolute;
+  top: 450px;
+  margin-left: 15%;
+}
+
+.logo-background {
+ height: 300px;
+ width: 250px;
+ z-index: 0;
+}
+
+.pic-background {
+  position: absolute;
+  height: 180px;
+  width: 170px;
+  left: 52px;
+  top: 57px;
+  z-index: 1;
+}

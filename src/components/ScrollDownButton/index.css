@@ -1,0 +1,10 @@
+
+.scroll-down-button {
+  display: none;
+  position: absolute;
+  border: none;
+  height: 1px;
+  width: 40px;
+  top: 748px;
+  left: 50%;
+}

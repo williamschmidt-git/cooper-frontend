@@ -1,0 +1,7 @@
+.contact-wrapper {
+  position: relative;
+  top: 480px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
