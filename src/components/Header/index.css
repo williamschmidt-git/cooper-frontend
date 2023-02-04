@@ -1,0 +1,38 @@
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px;
+}
+
+.logo {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.logo-cooper {
+  fill: #4AC959;
+  width: 43.54px;
+  height: 50px;
+  position: static;
+}
+
+.logo-title {
+  position: relative;
+  font-family: Arial, Helvetica, sans-serif;
+  right: -1vw;
+}
+
+.login-button {
+  background-color: black;
+  border: none;
+  height: 40px;
+  width: 120px;
+  color: white;
+  top: 54px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 600;
+  font-size: large;
+}
