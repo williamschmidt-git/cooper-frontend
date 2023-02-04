@@ -36,3 +36,11 @@
   font-weight: 600;
   font-size: large;
 }
+
+/* @media screen and (min-width: 767px) {
+  .topo {
+    /* display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px;
+  } */
