@@ -1,15 +1,13 @@
-import React, { useMemo, useState } from 'react';
+/* eslint-disable react/jsx-no-constructed-context-values */
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Context from '../Context';
 
 function Provider({ children }) {
-  const [teste, setTeste] = useState('');
-  const value = useMemo(() => ({
-    teste, setTeste,
-  }), [setTeste]);
+  const [showModal, setShowModal] = useState(false);
 
   return (
-    <Context.Provider value={value}>
+    <Context.Provider value={{ showModal, setShowModal }}>
       {children}
     </Context.Provider>
   );

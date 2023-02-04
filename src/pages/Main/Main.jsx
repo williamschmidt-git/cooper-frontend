@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import './index.css';
 import LoginModal from '../../components/LoginModal/LoginModal';
+import Context from '../../context/Context';
 
 export default function Main() {
-  const [showModal, setShowModal] = useState(false);
+  const { showModal, setShowModal } = useContext(Context);
+  console.log(showModal);
 
   return (
     <>
@@ -43,10 +45,7 @@ export default function Main() {
         <img src="./svgs/icon-scroll.svg" alt="arrow icon to scroll down" type />
       </button>
       {showModal ? (
-        <>
-          <LoginModal />
-          <div className="background-modal" />
-        </>
+        <LoginModal />
       ) : null}
     </>
   );
