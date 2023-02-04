@@ -126,3 +126,14 @@ body {
   top: 748px;
   left: 50%;
 }
+
+.background-modal {
+  position: fixed;
+  opacity: 0.4;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  z-index: 40;
+  background-color: black;
+}

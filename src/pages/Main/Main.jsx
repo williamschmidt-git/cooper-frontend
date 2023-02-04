@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.css';
+import LoginModal from '../../components/LoginModal/LoginModal';
 
 export default function Main() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <>
       <header>
@@ -10,7 +13,14 @@ export default function Main() {
             <img src="./svgs/Fill 1.svg" alt="less than symbol" className="logo-cooper" />
             <h1 className="logo-title">coopers</h1>
           </div>
-          <button type="button" className="login-button">entrar</button>
+          <button
+            type="button"
+            className="login-button"
+            onClick={() => setShowModal(true)}
+          >
+            entrar
+
+          </button>
         </div>
       </header>
 
@@ -32,6 +42,12 @@ export default function Main() {
       <button type="button" className="scroll-down-button">
         <img src="./svgs/icon-scroll.svg" alt="arrow icon to scroll down" type />
       </button>
+      {showModal ? (
+        <>
+          <LoginModal />
+          <div className="background-modal" />
+        </>
+      ) : null}
     </>
   );
 }
