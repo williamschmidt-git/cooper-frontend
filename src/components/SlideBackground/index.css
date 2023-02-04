@@ -19,3 +19,26 @@
   top: 57px;
   z-index: 1;
 }
+
+@media screen and (min-width: 767px) {
+  .slide-background {
+    position: absolute;
+    left: 353px;
+    top: 92px
+  }
+
+  .logo-background {
+    height: 400px;
+    width: 300px;
+    z-index: 0;
+   }
+   
+   .pic-background {
+     position: absolute;
+     height: 260px;
+     width: 220px;
+     left: 52px;
+     top: 57px;
+     z-index: 1;
+   }
+}

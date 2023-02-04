@@ -98,3 +98,102 @@
   font-weight: 600;
   color: black;
 }
+
+@media screen and (min-width: 767px) {
+  .modal {
+    position: fixed;
+    z-index: 40;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+  }
+
+  .modal-content {
+    max-width: 70%;
+    max-height: 70%;
+    height: 700px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline-width: none;
+    position: relative;
+    top: -100px;
+    width: 400px;
+    font-family: 'Montserrat';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-header > h4 {
+    font-size: 45px;
+  }
+  
+  .modal-header > img {
+    height: 180px;
+    margin-bottom: -20px;
+  }
+  
+  .modal-subhead {
+    margin-top: -3px;
+    color: #4AC959;
+    font-weight: 400;
+    font-size: 35px;
+  }
+  
+  .modal-body {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 25px;
+    margin-top: -40px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal-body > label > input {
+    border: 1px solid #959595;
+    border-radius: 4px;
+    height: 40px;
+    margin-bottom: 5px;
+    width: 210px;
+  }
+  
+  .modal-body > label {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  .signin-button { 
+    font-family: 'Montserrat';
+    font-weight: 600;
+    background-color: #4AC959;
+    font-size: larger;
+    color: white;
+    width: 200px;
+    height: 60px;
+    border: none;
+  }
+  
+  .close-button {
+    position: inherit;
+    left: 150px;
+    /* top: -10px; */
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+  }
+}
