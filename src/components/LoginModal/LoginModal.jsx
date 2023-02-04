@@ -11,7 +11,7 @@ export default function LoginModal() {
         <button className="close-button" type="button" onClick={() => setShowModal(false)}>close</button>
 
         <div className="modal-header">
-          <img src="./imgs/image 1.png" alt="woman" className="modal-img" />
+          <img src="assets/imgs/image 1.png" alt="woman" className="modal-img" />
           <h4 className="modal-title">
             Sign in
             <p className="modal-subhead">to access your list</p>

@@ -11,7 +11,7 @@ export default function GetInTouch() {
         TOUCH
       </h3>
       <div className="svg-background">
-        <img src="./svgs/mail.svg" alt="mail-letter" />
+        <img src="assets/svgs/mail.svg" alt="mail-letter" />
       </div>
 
     </div>

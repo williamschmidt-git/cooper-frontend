@@ -8,7 +8,7 @@ export default function Header() {
     <header>
       <div className="topo">
         <div className="logo">
-          <img src="./svgs/Fill 1.svg" alt="less than symbol" className="logo-cooper" />
+          <img src="/assets/svgs/Fill 1.svg" alt="less than symbol" className="logo-cooper" />
           <h1 className="logo-title">coopers</h1>
         </div>
         <button

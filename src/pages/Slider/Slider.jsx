@@ -11,15 +11,15 @@ export default function SliderComponent() {
   const [content] = useState([
     {
       text: 'Organize your daily job enhance your life performance',
-      img: './imgs/bitmap.png',
+      img: 'assets/imgs/bitmap.png',
     },
     {
       text: 'Mark one activity as done makes your brain understands the power of doing.',
-      img: './imgs/bitmap (1).png',
+      img: 'assets/imgs/bitmap (1).png',
     },
     {
       text: 'Careful with missunderstanding the difference between a list of things and a list of desires.',
-      img: './imgs/bitmap (2).png',
+      img: 'assets/imgs/bitmap (2).png',
     },
   ]);
   const settings = {
