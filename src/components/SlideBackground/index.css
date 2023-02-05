@@ -42,3 +42,47 @@
      z-index: 1;
    }
 }
+
+@media screen and (min-width: 766px) {
+  .slide-background {
+    position: absolute;
+    left: 350px;
+    top: 110px
+  }
+
+  .logo-background {
+    height: 300px;
+    width: 260px;
+    z-index: 0;
+   }
+   
+   .pic-background {
+     height: 220px;
+     width: 180px;
+     left: 42px;
+     top: 40px;
+     z-index: 1;
+   }
+}
+
+@media screen and (min-width: 900px) {
+  .slide-background {
+    position: absolute;
+    left: 500px;
+    top: 110px
+  }
+
+  .logo-background {
+    height: 300px;
+    width: 260px;
+    z-index: 0;
+   }
+   
+   .pic-background {
+     height: 220px;
+     width: 180px;
+     left: 42px;
+     top: 40px;
+     z-index: 1;
+   }
+}

@@ -41,8 +41,6 @@
 
   .slick-prev:before {
     content: '←';
-    /* position: absolute;
-    left: 30px; */
   }
 
   .slick-next:before {
