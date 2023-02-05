@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
 .todo-box {
   position: relative;
   width: 100%;
@@ -9,25 +8,61 @@
   background: black;
   transform: skewY(-8deg);
   top: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .todo-title {
   color: white;
+  text-align: center;
   font-family: 'Poppins';
   font-weight: 600;
-  font-size: 30px;
-  max-width: 50em;
+  font-size: 20px;
   transform: skewY(8deg);
   position: relative;
-  left: 30%;
-  top: 30%
+  top: -10px;
+  margin-bottom: 1px;
 }
 
 .todo-text {
   font-family: 'Montserrat';
   font-weight: 500;
-  font-size: 14px;
+  font-size: 13px;
   text-align: center;
   color: white;
   transform: skewY(8deg);
+  position: relative;
+  top: -10px;
+}
+
+@media screen and (min-width: 601px) {
+  .todo-box {
+    position: relative;
+    height: 180px;
+    background: black;
+    transform: skewY(-8deg);
+    top: 50px;
+  }
+  
+  .todo-title {
+    color: white;
+    font-family: 'Poppins';
+    text-align: center;
+    font-weight: 600;
+    font-size: 27px;
+    transform: skewY(8deg);
+    position: relative;
+
+  }
+  
+  .todo-text {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 12px;
+    text-align: center;
+    color: white;
+    transform: skewY(8deg);
+  }
 }

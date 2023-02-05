@@ -34,3 +34,19 @@
 .svg-background > img {
   height: 25px;
 }
+
+@media screen and (min-width: 601px) {
+  .get-in-touch-wrapper {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+  
+  .svg-background {
+    padding: 10px;
+    background-color: #46BD62;
+  }
+  
+  .svg-background > img {
+    height: 35px;
+  }
+}

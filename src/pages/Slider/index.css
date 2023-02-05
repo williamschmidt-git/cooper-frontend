@@ -17,3 +17,53 @@
 .slick-track {
   overflow: hidden;
 }
+
+@media screen and (min-width: 601px) {
+  .slider-wrapper {
+    position: absolute;
+    top: -269px;
+    left: 100px;
+    max-width: 460px;
+  }
+  
+  .slick-list {
+    border-radius: 16px;
+    box-shadow: 0px 4px 12px rgba(66, 66, 66, 0.198454);
+    padding: 4px;
+    position: inherit;
+    /* position: relative;
+    left: -40px; */
+  }
+
+  .slick-slide img {
+    height: 270px;
+  }
+
+  .slick-prev:before {
+    content: '←';
+    /* position: absolute;
+    left: 30px; */
+  }
+
+  .slick-next:before {
+    display: none;
+    content: '→';
+  }
+
+  .slick-prev:before {
+    display: none;
+    content: '→';
+  }
+
+  .slick-dots {
+    position: absolute;
+    bottom: -25px;
+    display: block;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    text-align: center;
+    left: -30px;
+  }
+}

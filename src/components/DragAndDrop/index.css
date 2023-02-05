@@ -163,3 +163,147 @@
   margin-bottom: 10px;
 }
 
+@media screen and (min-width: 601px) {
+  .top-border-todo {
+    height: 10px;
+    width: 100%;
+    background-color: #E88D39;
+    margin-bottom: -20px;
+  }
+  
+  .wrapper-todo-board {
+    margin-top: 95px;
+    display: flex;
+    position: inherit;
+    flex-grow: 1;
+    align-items: flex-start;
+    justify-content: space-evenly;
+  }
+  
+  .board-todo-title {
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: -2px;
+  }
+  
+  .board-todo-head {
+    font-weight: 400;
+    font-family: 'Montserrat';
+    text-align: center;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .board-todo-tasks {
+    padding: 1px;
+    position: relative;
+    height: auto;
+    min-height: 190px;
+    width: 40%;
+    box-shadow: 0px 4px 12px rgba(66, 66, 66, 0.198454);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .board-todo-tasks-active {
+    padding: 1px;
+    height: auto;
+    min-height: 290px;
+    width: 40%;
+    box-shadow: 0px 4px 12px rgba(66, 66, 66, 0.198454);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightblue;
+    transition: background-color 0.2s ease;
+  }
+  
+  .board-todo-task {
+    font-family: 'Montserrat';
+    font-weight: 400;
+  }
+  
+  .erase-all-button {
+    background-color: black;
+    border-radius: 4px;
+    position: relative;
+    border: none;
+    color: white;
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-size: large;
+    width: 130px;
+    height: auto;
+    min-height: 40px;
+    text-align: center;
+  }
+
+  .board-done-tasks {
+    padding: 1px;
+    position: relative;
+    height: auto;
+    min-height: 190px;
+    width: 40%;
+    box-shadow: 0px 4px 12px rgba(66, 66, 66, 0.198454);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.2s ease;
+  }
+  
+  .board-done-tasks-active {
+    padding: 1px;
+    position: relative;
+    height: auto;
+    min-height: 190px;
+    width: 40%;
+    box-shadow: 0px 4px 12px rgba(66, 66, 66, 0.198454);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    background-color: lightblue;
+  }
+  
+  .top-border-done {
+    height: 10px;
+    width: 100%;
+    background-color: #4AC959;
+    margin-bottom: -20px;
+  }
+  
+  .board-done-title {
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: -2px;
+  }
+  
+  .board-done-head {
+    font-weight: 400;
+    font-family: 'Montserrat';
+    text-align: center;
+    padding: 5px;
+    font-size: 25px;
+  }
+  
+  .board-how-many-tasks-done-text {
+    font-weight: 700;
+    font-family: 'Montserrat';
+    text-align: center;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    margin-bottom: 10px;
+  }  
+}
+

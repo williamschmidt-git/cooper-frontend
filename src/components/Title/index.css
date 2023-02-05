@@ -43,3 +43,52 @@
   width: 250px;
   height: 64px;
 }
+
+@media screen and (min-width: 601px) {
+  .Title {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    padding-left: 50px;
+  }
+
+  .title-first-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 64px;
+    margin-bottom: -40px;
+  }
+  
+  .title-second-text {
+    font-family: 'Montserrat';
+    color: #4AC959;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 34px;
+    line-height: 44px;
+  }
+  
+  .title-third-text {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  
+  .title-button {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 600;
+    background-color: #4AC959;
+    color:  #FFFFFF;
+    text-align: center;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    width: 250px;
+    height: 64px;
+  }
+}

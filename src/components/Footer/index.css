@@ -13,19 +13,6 @@ footer {
   margin-top: 25px;
 }
 
-/* footer::after {
-  border: none;
-  position:absolute;
-  top:-30px;
-  content:"";
-  height: 0; 
-  width: 0px;
-  /* max-width: 10%; */
-  /* border-right: 500px solid black;
-  border-top: 30px solid transparent; */
-
-/* } */
-
 .footer-notes {
   text-align: center;
   font-family: 'Montserrat';
@@ -38,4 +25,26 @@ footer > p {
   font-family: 'Montserrat';
   font-weight: 300;
   color: white;
+}
+
+@media screen and (min-width: 601px) {
+  footer {
+    position:inherit;
+  }
+  
+  .footer-notes {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    color: white;
+    font-size: 17px;
+  }
+  
+  footer > p {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-weight: 300;
+    color: white;
+    font-size: 17px;
+  }
 }
