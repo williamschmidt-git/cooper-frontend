@@ -31,8 +31,6 @@
     box-shadow: 0px 4px 12px rgba(66, 66, 66, 0.198454);
     padding: 4px;
     position: inherit;
-    /* position: relative;
-    left: -40px; */
   }
 
   .slick-slide img {
@@ -69,6 +67,28 @@
 @media screen and (min-width: 900px) {
   .slider-wrapper {
     max-width: 660px;
+  }
+
+  .slick-slide img {
+    height: 366px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .slider-wrapper {
+    max-width: 660px;
+    left: 150px;
+  }
+
+  .slick-slide img {
+    height: 366px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .slider-wrapper {
+    max-width: 660px;
+    left: 250px;
   }
 
   .slick-slide img {

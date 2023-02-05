@@ -110,3 +110,21 @@
     font-size: 20px;
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .title-first-text {
+    font-size: 75px;
+  }
+  
+  .title-second-text {
+    font-size: 50px;
+  }
+  
+  .title-third-text {
+    font-size: 21px;
+  }
+  
+  .title-button {
+    font-size: 23px;
+  }
+}

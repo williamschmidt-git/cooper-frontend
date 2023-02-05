@@ -39,31 +39,17 @@
 
 @media screen and (min-width: 601px) {
   .todo-box {
-    position: relative;
     height: 180px;
-    background: black;
-    transform: skewY(-8deg);
     top: 50px;
   }
   
   .todo-title {
     color: white;
-    font-family: 'Poppins';
-    text-align: center;
-    font-weight: 600;
     font-size: 27px;
-    transform: skewY(8deg);
-    position: relative;
-
   }
   
   .todo-text {
-    font-family: 'Montserrat';
-    font-weight: 500;
     font-size: 12px;
-    text-align: center;
-    color: white;
-    transform: skewY(8deg);
   }
 }
 
@@ -80,5 +66,22 @@
   .todo-text {
     max-width: 500px;
     font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 1280px) { 
+  .todo-title {
+    font-size: 38px;
+  }
+  
+  .todo-text {
+    max-width: 500px;
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .todo-box {
+    top: 200px
   }
 }
