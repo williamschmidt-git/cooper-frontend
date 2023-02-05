@@ -37,11 +37,10 @@
   top: -10px;
 }
 
-@media screen and (min-width: 767px) {
+@media screen and (min-width: 601px) {
   .todo-box {
     position: relative;
-    width: 110% ;
-    height: 200px;
+    height: 180px;
     background: black;
     transform: skewY(-8deg);
     top: 50px;
@@ -52,7 +51,7 @@
     font-family: 'Poppins';
     text-align: center;
     font-weight: 600;
-    font-size: 30px;
+    font-size: 27px;
     transform: skewY(8deg);
     position: relative;
 
@@ -61,7 +60,7 @@
   .todo-text {
     font-family: 'Montserrat';
     font-weight: 500;
-    font-size: 14px;
+    font-size: 12px;
     text-align: center;
     color: white;
     transform: skewY(8deg);

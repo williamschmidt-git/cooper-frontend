@@ -34,10 +34,6 @@
   color: black;
 }
 
-/* input, label, textarea {
-  display: block;
-} */
-
 .send-message-button {
   border: none;
   border-radius: 4px;
@@ -48,4 +44,19 @@
   width: 190px;
   height: 40px;
   margin-bottom: 10px;
+}
+
+@media screen and (min-width: 601px) {
+  .form-contact > label > input {
+    width: 280px;
+  }
+  
+  .form-contact > label > textarea {
+    width: 280px;
+  }
+  
+  .send-message-button {
+    width: 280px;
+    margin-bottom: 10px;
+  }
 }

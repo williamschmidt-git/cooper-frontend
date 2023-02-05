@@ -22,6 +22,7 @@ export default function SliderComponent() {
       img: 'assets/imgs/bitmap (2).png',
     },
   ]);
+
   const settings = {
     dots: true,
     infinite: true,

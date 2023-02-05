@@ -3,13 +3,14 @@
 .text {
   font-family: 'Montserrat';
   font-weight: 300;
-  font-size: 15px;
+  font-size: 19px;
   text-align: start;
   line-break: auto;
   padding-left: 8px;
   padding-right: 8px;
   position: relative;
-  top: -20px
+  top: -20px;
+  padding: 10px
 }
 
 .logo-slider {
@@ -29,4 +30,17 @@
   color: #42D76B;
   text-align: justify;
   padding-left: 8px;
+}
+
+.function {
+  display: none;
+  color: rgb(97, 97, 97);
+  font-weight: 300;
+  font-size: 17px;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+
+@media screen and (min-width: 601px) {
 }
