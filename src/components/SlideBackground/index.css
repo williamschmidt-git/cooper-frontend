@@ -114,3 +114,114 @@
      z-index: 2;
    }
 }
+
+@media screen and (min-width: 1366px) {
+  .slide-background {
+    position: absolute;
+    left: 670px;
+    top: 30px
+  }
+
+  .logo-background {
+    height: 580px;
+    width: 540px;
+    z-index: 1;
+   }
+   
+   .pic-background {
+     height: 380px;
+     width: 340px;
+     left: 92px;
+     top: 80px;
+     z-index: 2;
+   }
+}
+
+@media screen and (min-width: 1536px) {
+  .slide-background {
+    position: absolute;
+    left: 790px;
+    top: 20px
+  }
+
+  .logo-background {
+    height: 590px;
+    width: 550px;
+    z-index: 1;
+   }
+   
+   .pic-background {
+     height: 380px;
+     width: 340px;
+     left: 92px;
+     top: 80px;
+     z-index: 2;
+   }
+}
+
+@media screen and (min-width: 1680px) {
+  .slide-background {
+    position: absolute;
+    left: 1000px;
+    top: 10px;
+  }
+
+  .logo-background {
+    height: 690px;
+    width: 640px;
+    z-index: 1;
+   }
+   
+   .pic-background {
+     height: 420px;
+     width: 380px;
+     left: 112px;
+     top: 115px;
+     z-index: 2;
+   }
+}
+
+@media screen and (min-width: 1980px) {
+  .slide-background {
+    position: absolute;
+    left: 1100px;
+    top: 40px;
+  }
+
+  .logo-background {
+    height: 690px;
+    width: 640px;
+    z-index: 1;
+   }
+   
+   .pic-background {
+     height: 420px;
+     width: 380px;
+     left: 112px;
+     top: 115px;
+     z-index: 2;
+   }
+}
+
+/* @media screen and (min-width: 2560px) {
+  .slide-background {
+    position: absolute;
+    left: 790px;
+    top: 20px;
+  }
+
+  .logo-background {
+    height: 590px;
+    width: 550px;
+    z-index: 1;
+    background-color: aqua;
+   }
+   
+   .pic-background {
+     height: 380px;
+     width: 340px;
+     left: 92px;
+     top: 80px;
+     z-index: 2;
+   }
+} */

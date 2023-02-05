@@ -332,3 +332,9 @@
     font-size: 30px;
   }  
 }
+
+@media screen and (min-width: 1680px) {
+  .wrapper-todo-board {
+    margin-top: 375px;
+  }
+}
