@@ -276,3 +276,59 @@
     font-size: 20px;
   }  
 }
+
+@media screen and (min-width: 1280px) {
+  .wrapper-todo-board {
+    margin-top: 175px;
+  }
+  
+  .board-todo-title {
+    font-size: 55px;
+  }
+  
+  .board-todo-head {
+    font-size: 40px;
+  }
+  
+  .board-todo-tasks {
+    height: auto;
+    min-height: 190px;
+    width: 40%;
+  }
+  
+  .board-todo-tasks-active {
+    height: auto;
+    min-height: 290px;
+    width: 40%;
+  }
+  
+  .erase-all-button {
+    font-size: xx-large;
+    width: 190px;
+    min-height: 50px;
+  }
+
+  .board-done-tasks {
+    height: auto;
+    min-height: 290px;
+    width: 40%;
+  }
+  
+  .board-done-tasks-active {
+    height: auto;
+    min-height: 190px;
+    width: 40%;
+  }
+  
+  .board-done-title {
+    font-size: 55px;
+  }
+  
+  .board-done-head {
+    font-size: 40px;
+  }
+  
+  .board-how-many-tasks-done-text {
+    font-size: 30px;
+  }  
+}

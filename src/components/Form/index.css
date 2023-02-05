@@ -103,3 +103,35 @@
     margin-bottom: 10px;
   }
 }
+
+@media screen and (min-width: 1024px) {
+  .form-contact {
+    width: 70%;
+  }
+
+  .middle-inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .middle-inputs > label > input {
+    width: calc((490px / 2) - 20px);
+    font-size: larger;
+  } 
+
+  .form-contact > label > input {
+    width: 490px;
+    font-size: larger;
+  }
+  
+  .form-contact > label > textarea {
+    width: 490px;
+    font-size: larger;
+  }
+  
+  .send-message-button {
+    width: 510px;
+    margin-bottom: 10px;
+  }
+}

@@ -82,3 +82,14 @@
     font-size: 18px;
   }
 }
+
+@media screen and (min-width: 1280px) { 
+  .todo-title {
+    font-size: 38px;
+  }
+  
+  .todo-text {
+    max-width: 500px;
+    font-size: 20px;
+  }
+}

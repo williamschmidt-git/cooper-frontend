@@ -48,3 +48,11 @@
     z-index: 2;
   }
 }
+
+@media screen and (min-width: 1280px) {
+  .login-button {
+    height: 55px;
+    width: 170px;
+    z-index: 2;
+  }
+}
