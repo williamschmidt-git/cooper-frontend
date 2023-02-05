@@ -188,3 +188,32 @@
     font-size: 18px;
   }
 }
+
+@media screen and (min-width: 900px) {
+  .modal-content {
+    max-height: 70%;
+    width: 560px;
+    height: 700px;
+  }
+  
+  .modal-header > h4 {
+    font-size: 40px;
+  }
+  
+  .modal-header > img {
+    height: 170px;
+    margin-bottom: -40px;
+  }
+
+  .modal-body > label > input {
+    height: 40px;
+  }
+  
+  .close-button {
+    position: inherit;
+    top: -10px;
+    left: 220px;
+    font-weight: 600;
+    font-size: 22px;
+  }
+}

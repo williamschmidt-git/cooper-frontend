@@ -20,6 +20,15 @@
   color: black ;
 }
 
+.middle-inputs > label> input {
+  display: block;
+  padding: 9px;
+  border: 1px solid #06152B;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  color: black ;
+}
+
 .form-contact > label > textarea {
   display: block;
   padding: 9px;
@@ -46,17 +55,51 @@
   margin-bottom: 10px;
 }
 
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 601px) {  
   .form-contact > label > input {
-    width: 280px;
+    width: 200px;
   }
   
   .form-contact > label > textarea {
-    width: 280px;
+    width: 200px;
+  }
+
+  .middle-inputs > label > input {
+    width: 200px;
   }
   
   .send-message-button {
-    width: 280px;
+    width: 220px;
+    margin-bottom: 10px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .form-contact {
+    max-width: 80%;
+    width: 60%;
+  }
+
+  .middle-inputs {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  .middle-inputs > label > input {
+    width: calc((390px / 2) - 20px);
+  } 
+
+  .form-contact > label > input {
+    width: 390px;
+  }
+  
+  .form-contact > label > textarea {
+    width: 390px;
+  }
+  
+  .send-message-button {
+    width: 410px;
     margin-bottom: 10px;
   }
 }

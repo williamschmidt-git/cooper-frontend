@@ -12,3 +12,15 @@
   width: 200px;
   background-color: #46BD62;
 }
+
+@media screen and (min-width: 900px) {
+  .elipse-img {
+    border-radius: 150px;
+    height: 250px;
+  }
+
+  .rectangle-graphics {
+    top: 140px;
+    left: -70px;
+  }
+}

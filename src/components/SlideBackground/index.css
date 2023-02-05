@@ -68,21 +68,21 @@
 @media screen and (min-width: 900px) {
   .slide-background {
     position: absolute;
-    left: 500px;
-    top: 110px
+    left: 335px;
+    top: 50px
   }
 
   .logo-background {
-    height: 300px;
-    width: 260px;
-    z-index: 0;
+    height: 480px;
+    width: 440px;
+    z-index: 1;
    }
    
    .pic-background {
-     height: 220px;
-     width: 180px;
-     left: 42px;
-     top: 40px;
-     z-index: 1;
+     height: 300px;
+     width: 260px;
+     left: 92px;
+     top: 80px;
+     z-index: 2;
    }
 }
