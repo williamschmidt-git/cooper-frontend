@@ -8,15 +8,17 @@ export default function Form() {
         Your name
         <input type="text" placeholder="type your name here" id="name" />
       </label>
-      <label htmlFor="email">
-        E-mail*
-        <input type="text" placeholder="example@example.com" id="email" />
-      </label>
+      <div className="middle-inputs">
+        <label htmlFor="email">
+          E-mail*
+          <input type="text" placeholder="example@example.com" id="email" />
+        </label>
 
-      <label htmlFor="telephone">
-        Telephone*
-        <input type="text" placeholder="( ) _____-____" id="telephone" />
-      </label>
+        <label htmlFor="telephone">
+          Telephone*
+          <input type="text" placeholder="( ) _____-____" id="telephone" />
+        </label>
+      </div>
 
       <label htmlFor="message">
         Message*

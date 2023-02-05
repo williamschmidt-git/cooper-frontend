@@ -16,3 +16,13 @@
     align-items: center;
   }
 }
+
+@media screen and (min-width: 900px) {
+  .contact-wrapper {
+    position: inherit;
+    margin-top: -210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

@@ -27,3 +27,9 @@
 .input-wrapper {
   margin-bottom: 4px;
 }
+
+@media screen and (min-width: 900px) {
+  .board-todo-task-text {
+    font-size: 19px;
+  }
+}

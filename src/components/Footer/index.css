@@ -6,11 +6,12 @@ footer {
   align-items: center;
   border: none;
   position:absolute;
-  height: 130px;
+  height: 15%;
   width: 100%;
   background-color:black;
   top:100%;
   margin-top: 25px;
+  padding: 8px;
 }
 
 .footer-notes {
@@ -29,22 +30,25 @@ footer > p {
 
 @media screen and (min-width: 601px) {
   footer {
+    height: 1%;
     position:inherit;
   }
   
   .footer-notes {
-    text-align: center;
-    font-family: 'Montserrat';
-    font-weight: 700;
-    color: white;
     font-size: 17px;
   }
   
   footer > p {
-    text-align: center;
-    font-family: 'Montserrat';
-    font-weight: 300;
-    color: white;
     font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .footer-notes {
+    font-size: 20px;
+  }
+  
+  footer > p {
+    font-size: 20px;
   }
 }

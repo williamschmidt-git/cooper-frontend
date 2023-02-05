@@ -41,8 +41,6 @@
 
   .slick-prev:before {
     content: '←';
-    /* position: absolute;
-    left: 30px; */
   }
 
   .slick-next:before {
@@ -65,5 +63,15 @@
     list-style: none;
     text-align: center;
     left: -30px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .slider-wrapper {
+    max-width: 660px;
+  }
+
+  .slick-slide img {
+    height: 366px;
   }
 }

@@ -50,3 +50,43 @@
     height: 35px;
   }
 }
+
+@media screen and (min-width: 900px) {
+  .get-in-touch-wrapper {
+    flex-direction: row-reverse;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+    max-width: 250px;
+    max-height: 400px;
+  }
+   
+  .svg-background {
+    padding: 10px;
+    background-color: #46BD62;
+    height: 45px;
+    width: 45px;
+    position: relative;
+    top: -20px;
+  }
+  
+  .svg-background > img {
+    height: 35px;
+  }
+
+  .get-in-touch-title-1 {
+    height: 40px;
+    max-height: 40px;
+    position: relative;
+    left: 40px;
+    top: 35px;
+  }
+  
+  .get-in-touch-title-2 {
+    max-height: 40px;
+    position: relative;
+    top: 25px;
+  }
+}

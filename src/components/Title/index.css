@@ -92,3 +92,21 @@
     height: 64px;
   }
 }
+
+@media screen and (min-width: 900px) {
+  .title-first-text {
+    font-size: 65px;
+  }
+  
+  .title-second-text {
+    font-size: 40px;
+  }
+  
+  .title-third-text {
+    font-size: 18px;
+  }
+  
+  .title-button {
+    font-size: 20px;
+  }
+}

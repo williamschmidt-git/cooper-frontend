@@ -66,3 +66,19 @@
     transform: skewY(8deg);
   }
 }
+
+@media screen and (min-width: 900px) {
+  .todo-box {
+    height: 200px;
+    z-index: -1;
+  }
+  
+  .todo-title {
+    font-size: 34px;
+  }
+  
+  .todo-text {
+    max-width: 500px;
+    font-size: 18px;
+  }
+}
