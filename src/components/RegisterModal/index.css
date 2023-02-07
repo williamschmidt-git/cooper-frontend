@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.modal {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left:0px;
+  z-index: 40;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 70%;
+  height: 500px;
+  /* left: -153px; */
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline-width: none;
+  position: relative;
+  width: auto;
+  background-color: white;
+  font-family: 'Montserrat';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-header > h4 {
+  font-size: 35px;
+}
+
+.modal-header > img {
+  height: 130px;
+}
+
+.modal-subhead {
+  margin-top: -3px;
+  color: #4AC959;
+  font-weight: 400;
+  font-size: 25px;
+}
+
+.modal-body {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 20px;
+  margin-top: -40px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-body > label > input {
+  border: 1px solid #959595;
+  border-radius: 4px;
+  height: 30px;
+  margin-bottom: 5px;
+  width: 210px;
+}
+
+
+.modal-body > label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.signin-button { 
+  font-family: 'Montserrat';
+  font-weight: 600;
+  background-color: #4AC959;
+  color: white;
+  width: 170px;
+  height: 40px;
+  border: none;
+}
+
+.close-button {
+  position: relative;
+  left: 130px;
+  border: none;
+  background: none;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  color: black;
+}
+
+@media screen and (min-width: 601px) {
+  .modal-content {
+    width: 560px;
+    height: 500px;
+    position: relative;
+    left: 1%;
+  }
+  
+  .modal-header > h4 {
+    font-size: 30px;
+  }
+  
+  .modal-header > img {
+    height: 110px;
+    margin-bottom: -40px;
+  }
+  
+  .modal-body {
+    display: block;
+    font-size: 18px;
+    margin-top: -60px;
+  }
+  
+  .modal-body > label > input {
+    height: 30px;
+    width: 210px;
+  }
+  
+  .signin-button { 
+    font-size: larger;
+    color: white;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 4px;
+  }
+  
+  .close-button {
+    position: inherit;
+    top: -40px;
+    left: 200px;
+    font-weight: 600;
+    font-size: 17px;
+  }
+}
+
+@media screen and (min-width: 767px) {
+  .modal-content {
+    max-height: 70%;
+    width: 560px;
+    height: 700px;
+  }
+  
+  .modal-header > h4 {
+    font-size: 40px;
+  }
+  
+  .modal-header > img {
+    height: 150px;
+    margin-bottom: -40px;
+  }
+  
+  .modal-body {
+    display: flex;
+    flex-direction: column;
+    font-size: 22px;
+    margin-top: -60px;
+  }
+  
+  .modal-body > label > input {
+    height: 30px;
+    width: 210px;
+  }
+  
+  .signin-button { 
+    font-size: larger;
+    color: white;
+    width: 200px;
+    height: 40px;
+    margin-bottom: 4px;
+  }
+  
+  .close-button {
+    position: inherit;
+    top: -20px;
+    left: 220px;
+    font-weight: 600;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .modal-content {
+    max-height: 70%;
+    width: 560px;
+    height: 700px;
+  }
+  
+  .modal-header > h4 {
+    font-size: 40px;
+  }
+  
+  .modal-header > img {
+    height: 170px;
+    margin-bottom: -40px;
+  }
+
+  .modal-body > label > input {
+    height: 40px;
+  }
+  
+  .close-button {
+    position: inherit;
+    top: -10px;
+    left: 220px;
+    font-weight: 600;
+    font-size: 22px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .modal-content {
+    max-height: 80%;
+    width: 560px;
+    height: 700px;
+  }
+
+  .modal-header > h4 {
+    font-size: 45px;
+  }
+  
+  .modal-header > img {
+    height: 190px;
+    margin-bottom: -40px;
+  }
+
+  .modal-body > label > input {
+    height: 45px;
+  }
+  
+  .close-button {
+    position: inherit;
+    top: 10px;
+    left: 220px;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .signin-button {
+    width: 210px;
+    height: 50px;
+  }
+}
+
+@media screen and (min-width: 1680px) {
+  .close-button {
+    position: inherit;
+    top: -30px;
+    left: 220px;
+    font-weight: 600;
+    font-size: 24px;
+  }
+}

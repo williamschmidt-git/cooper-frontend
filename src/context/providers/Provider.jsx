@@ -4,10 +4,20 @@ import PropTypes from 'prop-types';
 import Context from '../Context';
 
 function Provider({ children }) {
-  const [showModal, setShowModal] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
+  const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
-    <Context.Provider value={{ showModal, setShowModal }}>
+    <Context.Provider value={{
+      showLoginModal,
+      setShowLoginModal,
+      showRegisterModal,
+      setShowRegisterModal,
+      isLoggedIn,
+      setIsLoggedIn,
+    }}
+    >
       {children}
     </Context.Provider>
   );

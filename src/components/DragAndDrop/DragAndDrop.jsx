@@ -1,26 +1,64 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './index.css';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Task from '../Task/Task';
+// import Context from '../../context/Context';
+import { updateTask, listTasks } from '../../requests/task';
 
 export default function DragAndDrop() {
-  const [todoTasks, setTodoTasks] = useState([
-    {
-      id: '1',
-      task: 'Develop the To-do list page',
-    },
-    {
-      id: '2',
-      task: 'Create the drag-and-drop function',
-    },
-    {
-      id: '3',
-      task: 'Add new tasks',
-    },
-  ]);
-
+  // const { isLoggedIn } = useContext(Context);
+  const [todoTasks, setTodoTasks] = useState([]);
   const [doneBoard, setDoneBoard] = useState([]);
+
+  const getcookie = () => {
+    const token = document.cookie.split('=').pop();
+    return token;
+  };
+
+  const requestGetApi = async () => {
+    const { tasks } = await listTasks(getcookie());
+
+    if (tasks) {
+      const formattedTasks = tasks.map((e) => ({
+        id: String(e.id),
+        isTaskDone: e.isTaskDone,
+        task: e.taskToDo,
+      }));
+
+      setTodoTasks([...formattedTasks]);
+    }
+  };
+
+  useEffect(() => {
+    const getApi = async () => {
+      const response = await requestGetApi();
+      return response;
+    };
+    getApi();
+  }, []);
+
+  const requestPatchApi = async () => {
+    const { tasks } = await listTasks(getcookie());
+
+    if (tasks) {
+      const formattedTasks = tasks.map((e) => ({
+        id: String(e.id),
+        isTaskDone: e.isTaskDone,
+        task: e.taskToDo,
+      }));
+
+      setTodoTasks([...formattedTasks]);
+    }
+  };
+
+  useEffect(() => {
+    const patchApi = async () => {
+      const response = await requestPatchApi();
+      return response;
+    };
+    patchApi();
+  }, []);
 
   const handleOnDragEnd = (result) => {
     if (!result.destination) return;
@@ -42,6 +80,9 @@ export default function DragAndDrop() {
 
       const [removedItem] = items.splice(result.source.index, 1);
       items.splice(result.destination.index, 1, removedItem);
+      removedItem.isTaskDone = true;
+      console.log(removedItem);
+      updateTask(getcookie(), removedItem);
       setDoneBoard([...doneBoard, removedItem]);
       const newArr = todoTasks.filter((e) => e !== removedItem);
       setTodoTasks(newArr);
@@ -77,7 +118,7 @@ export default function DragAndDrop() {
                 ref={provided.innerRef}
               >
                 {provided.placeholder}
-                {todoTasks.map((task, index) => (
+                {todoTasks.length > 0 && todoTasks.map((task, index) => (
                   <Task
                     text={task.task}
                     id={task.id.toString()}
