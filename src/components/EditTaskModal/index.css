@@ -1,0 +1,63 @@
+.edit-task-modal {
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left:0px;
+  z-index: 40;
+  background-color: rgba(0,0,0,0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-task-modal-content {
+  border-radius: 20px;
+  max-width: 55%;
+  max-height: 40%;
+  height: auto;
+  position: relative;
+  width: auto;
+  background-color: white;
+  font-family: 'Montserrat';
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.edit-task-modal-header > h4 {
+  font-size: 24px;
+}
+
+.edit-task-modal-body {
+  font-family: 'Montserrat';
+  font-weight: 600;
+  font-size: 20px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.edit-task-modal-edit-button {
+  margin-top: 6px;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  background-color: #4AC959;
+  color: white;
+  width: 50%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+}
+
+.edit-task-modal-close-button{
+  border: none;
+  background: none;
+  font-family: 'Montserrat';
+  font-weight: 600;
+  color: black;
+}

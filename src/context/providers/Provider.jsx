@@ -7,7 +7,9 @@ function Provider({ children }) {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
   const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
+  const [showEditTaskModal, setShowEditTaskModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [idRef, setIdRef] = useState(999);
 
   return (
     <Context.Provider value={{
@@ -19,6 +21,10 @@ function Provider({ children }) {
       setIsLoggedIn,
       showCreateTaskModal,
       setShowCreateTaskModal,
+      showEditTaskModal,
+      setShowEditTaskModal,
+      idRef,
+      setIdRef,
     }}
     >
       {children}

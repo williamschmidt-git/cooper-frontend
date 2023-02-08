@@ -1,22 +1,34 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
 import { Draggable } from 'react-beautiful-dnd';
+import Context from '../../context/Context';
 import { deleteTask } from '../../requests/task';
 
 export default function Task({
   text, id, key, index, droppableId,
 }) {
+  const {
+    // showEditTaskModal,
+    setShowEditTaskModal,
+    setIdRef,
+  } = useContext(Context);
+  // console.log(id);
+
   const getcookie = () => {
     const token = document.cookie.split('=').pop();
     return token;
   };
 
   const handleDelete = (taskId) => {
-    console.log(taskId);
     deleteTask(getcookie(), taskId);
+  };
+
+  const handleUpdate = (taskId) => {
+    setIdRef(taskId);
+    setShowEditTaskModal(true);
   };
 
   return (
@@ -43,7 +55,10 @@ export default function Task({
                   type="image"
                   alt="pen symbol"
                   src="/assets/svgs/edit-svgrepo-com.svg"
-                  onClick={() => console.log('updated')}
+                  onClick={() => {
+                    handleUpdate(id);
+                    setShowEditTaskModal(true);
+                  }}
                 />
                 <input
                   className="delete-btn"
@@ -53,7 +68,6 @@ export default function Task({
                   onClick={() => handleDelete(id)}
                 />
               </div>
-
             </div>
           ) : (
             <div key={key}>

@@ -66,6 +66,7 @@ const deleteTask = async (token, id) => {
   const response = await axios(options);
   return response.data;
 };
+
 export {
   updateTask, listTasks, createTask, deleteTask,
 };

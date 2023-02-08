@@ -7,11 +7,16 @@ import Task from '../Task/Task';
 // import Context from '../../context/Context';
 import { updateTask, listTasks } from '../../requests/task';
 import CreateTaskModal from '../CreateTaskModal/CreateTaskModal';
+import EditTaskModal from '../EditTaskModal/EditTaskModal';
 
 export default function DragAndDrop() {
   const [todoTasks, setTodoTasks] = useState([]);
   const [doneBoard, setDoneBoard] = useState([]);
-  const { setShowCreateTaskModal, showCreateTaskModal } = useContext(Context);
+  const {
+    setShowCreateTaskModal,
+    showCreateTaskModal,
+    showEditTaskModal,
+  } = useContext(Context);
 
   const getcookie = () => {
     const token = document.cookie.split('=').pop();
@@ -151,6 +156,10 @@ export default function DragAndDrop() {
       {
         showCreateTaskModal
         && <CreateTaskModal />
+      }
+      {
+        showEditTaskModal
+        && <EditTaskModal />
       }
     </DragDropContext>
   );
