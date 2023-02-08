@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="footer-notes">
-        <p>Need help?</p>
+        <h3>Need help?</h3>
         <p>coopers@coopers.pro</p>
       </div>
       <p>© 2021 Coopers. All rights reserved.</p>

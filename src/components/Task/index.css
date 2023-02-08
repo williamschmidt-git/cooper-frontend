@@ -21,11 +21,59 @@
   text-align: start;
   padding: 4px 1px;
   margin: 2px;
-  max-width: 150px;
+  max-width: 100%;
 }
 
 .input-wrapper {
+  max-width: 90%;
   margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s;
+  padding: 4px;
+}
+
+/* .button-wrapper {
+  display: block;
+  align-items: center;
+  justify-content: center; 
+} */
+
+.update-btn {
+  display: none;
+  height: 20px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  transition: transform .2s;
+}
+
+.update-btn:hover {
+  transform: scale(1.3);
+}
+
+.delete-btn {
+  display: none;
+  height: 14px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  transition: transform .2s;
+}
+
+.delete-btn:hover {
+  transform: scale(1.3);
+}
+
+.input-wrapper:hover {
+  transform: scale(1.001);
+}
+
+.input-wrapper:hover > .button-wrapper > .delete-btn {
+  display: block;
+}
+
+.input-wrapper:hover > .button-wrapper > .update-btn {
+  display: block;
 }
 
 @media screen and (min-width: 900px) {
@@ -38,10 +86,28 @@
   .board-todo-task-text {
     font-size: 22px;
   }
+
+  .update-btn {
+    height: 30px;
+  }
+
+  .delete-btn {
+    height: 24px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
   .board-todo-task-text {
     font-size: 26px;
+  }
+}
+
+@media screen and(min-width: 1680px) {
+  .update-btn {
+    height: 40px;
+  }
+
+  .delete-btn {
+    height: 34px;
   }
 }

@@ -11,7 +11,7 @@
   font-weight: 700;
   font-size: 50px;
   line-height: 64px;
-  margin-bottom: -40px;
+  margin-bottom: -50px;
 }
 
 .title-second-text {
@@ -20,7 +20,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 37px;
-  line-height: 44px;
+  margin-top: 5px;
 }
 
 .title-third-text {

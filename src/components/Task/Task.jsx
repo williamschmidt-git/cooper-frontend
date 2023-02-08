@@ -1,13 +1,30 @@
 /* eslint-disable react/no-unknown-property */
 /* eslint-disable react/jsx-props-no-spreading */
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
 import { Draggable } from 'react-beautiful-dnd';
+import Context from '../../context/Context';
 
 export default function Task({
-  text, id, key, index, droppableId,
+  text, id, index, droppableId,
 }) {
+  const {
+    setShowEditTaskModal,
+    setShowDeleteTaskModal,
+    setIdRef,
+  } = useContext(Context);
+
+  const handleDelete = (taskId) => {
+    setIdRef(taskId);
+    setShowDeleteTaskModal(true);
+  };
+
+  const handleUpdate = (taskId) => {
+    setIdRef(taskId);
+    setShowEditTaskModal(true);
+  };
+
   return (
     <Draggable draggableId={id} index={index}>
       {(provided, snapshot) => (
@@ -18,19 +35,37 @@ export default function Task({
           ref={provided.innerRef}
         >
           {droppableId === 'tasks' ? (
-            <div key={key} className="input-wrapper">
-              <input type="radio" id={id} />
+            <div className="input-wrapper">
+              <input type="radio" id={id} name="task" />
               <label
                 htmlFor={id}
                 className="board-todo-task-text"
               >
                 {text}
               </label>
-
+              <div className="button-wrapper">
+                <input
+                  className="update-btn"
+                  type="image"
+                  alt="pen symbol"
+                  src="/assets/svgs/edit-svgrepo-com.svg"
+                  onClick={() => {
+                    handleUpdate(id);
+                    setShowEditTaskModal(true);
+                  }}
+                />
+                <input
+                  className="delete-btn"
+                  type="image"
+                  src="/assets/svgs/trash-svgrepo-com.svg"
+                  alt="minus symbol"
+                  onClick={() => handleDelete(id)}
+                />
+              </div>
             </div>
           ) : (
-            <div key={key}>
-              <input type="radio" id={id} checked />
+            <div>
+              <input type="radio" id={id} defaultChecked />
               <label
                 htmlFor={id}
                 className="board-todo-task-text"
@@ -40,6 +75,7 @@ export default function Task({
 
             </div>
           )}
+
         </div>
       )}
 
@@ -49,8 +85,7 @@ export default function Task({
 }
 
 Task.propTypes = {
-  id: PropTypes.number.isRequired,
-  key: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   droppableId: PropTypes.string.isRequired,

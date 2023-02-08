@@ -5,18 +5,18 @@ import Context from '../../context/Context';
 import Header from '../../components/Header/Header';
 import Title from '../../components/Title/Title';
 import SlideBackground from '../../components/SlideBackground/SlideBackground';
+import RegisterModal from '../../components/RegisterModal/RegisterModal';
 
 export default function Main() {
-  const { showModal } = useContext(Context);
+  const { showLoginModal, showRegisterModal } = useContext(Context);
 
   return (
     <>
       <Header />
       <Title />
       <SlideBackground />
-      {showModal ? (
-        <LoginModal />
-      ) : null}
+      {showLoginModal && <LoginModal />}
+      {showRegisterModal && <RegisterModal />}
     </>
   );
 }
