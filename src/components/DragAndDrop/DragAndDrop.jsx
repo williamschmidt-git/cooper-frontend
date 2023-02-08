@@ -73,7 +73,6 @@ export default function DragAndDrop() {
   const handleEraseButton = async (e) => {
     if (e.target.parentNode.className.includes('todo')) {
       await deleteAll(getCookie(), todoTasks);
-      console.log(todoTasks);
       setTodoTasks([]);
     }
     if (e.target.parentNode.className.includes('done')) {
