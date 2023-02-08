@@ -18,15 +18,14 @@ export default function DragAndDrop() {
 
   const requestGetApi = async () => {
     const { tasks } = await listTasks(getcookie());
+    console.log(tasks);
 
     if (tasks) {
-      const formattedTasks = tasks.map((e) => ({
-        id: String(e.id),
-        isTaskDone: e.isTaskDone,
-        task: e.taskToDo,
-      }));
+      const toDoTasksArray = tasks.filter((e) => e.isTaskDone === false);
+      const doneTasksArray = tasks.filter(((e) => e.isTaskDone !== false));
 
-      setTodoTasks([...formattedTasks]);
+      setTodoTasks([...toDoTasksArray]);
+      setDoneBoard([...doneTasksArray]);
     }
   };
 
@@ -38,27 +37,27 @@ export default function DragAndDrop() {
     getApi();
   }, []);
 
-  const requestPatchApi = async () => {
-    const { tasks } = await listTasks(getcookie());
+  // const requestPatchApi = async () => {
+  //   const { tasks } = await listTasks(getcookie());
 
-    if (tasks) {
-      const formattedTasks = tasks.map((e) => ({
-        id: String(e.id),
-        isTaskDone: e.isTaskDone,
-        task: e.taskToDo,
-      }));
+  //   if (tasks) {
+  //     const formattedTasks = tasks.map((e) => ({
+  //       id: String(e.id),
+  //       isTaskDone: e.isTaskDone,
+  //       toDoTask: e.taskToDo,
+  //     }));
 
-      setTodoTasks([...formattedTasks]);
-    }
-  };
+  //     setTodoTasks([...formattedTasks]);
+  //   }
+  // };
 
-  useEffect(() => {
-    const patchApi = async () => {
-      const response = await requestPatchApi();
-      return response;
-    };
-    patchApi();
-  }, []);
+  // useEffect(() => {
+  //   const patchApi = async () => {
+  //     const response = await requestPatchApi();
+  //     return response;
+  //   };
+  //   patchApi();
+  // }, [setTodoTasks, setTodoTasks]);
 
   const handleOnDragEnd = (result) => {
     if (!result.destination) return;
@@ -81,7 +80,6 @@ export default function DragAndDrop() {
       const [removedItem] = items.splice(result.source.index, 1);
       items.splice(result.destination.index, 1, removedItem);
       removedItem.isTaskDone = true;
-      console.log(removedItem);
       updateTask(getcookie(), removedItem);
       setDoneBoard([...doneBoard, removedItem]);
       const newArr = todoTasks.filter((e) => e !== removedItem);
@@ -97,6 +95,7 @@ export default function DragAndDrop() {
       setDoneBoard([]);
     }
   };
+  console.log(todoTasks);
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
@@ -120,7 +119,7 @@ export default function DragAndDrop() {
                 {provided.placeholder}
                 {todoTasks.length > 0 && todoTasks.map((task, index) => (
                   <Task
-                    text={task.task}
+                    text={task.taskToDo}
                     id={task.id.toString()}
                     key={task.id}
                     index={index}
@@ -149,7 +148,13 @@ export default function DragAndDrop() {
                   >
                     {innerProvided.placeholder}
                     {doneBoard.map((task, index) => (
-                      <Task text={task.task} id={task.id} key={task.id} index={index} droppableId="doneTasks" />
+                      <Task
+                        text={task.taskToDo}
+                        id={task.id.toString()}
+                        key={task.id}
+                        index={index}
+                        droppableId="doneTasks"
+                      />
                     ))}
                   </div>
                   <button type="button" className="erase-all-button" onClick={(e) => handleEraseButton(e)}>erase all</button>
