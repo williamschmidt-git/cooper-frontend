@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import Context from '../../context/Context';
+import { createTask } from '../../requests/task';
 import './index.css';
 
 export default function CreateTaskModal() {
@@ -9,6 +10,16 @@ export default function CreateTaskModal() {
   const handleChange = (e) => {
     const { value } = e.target;
     setTask(value);
+  };
+
+  const getcookie = () => {
+    const token = document.cookie.split('=').pop();
+    return token;
+  };
+
+  const handleClick = async () => {
+    await createTask(getcookie(), task);
+    setShowCreateTaskModal(false);
   };
 
   return (
@@ -23,7 +34,7 @@ export default function CreateTaskModal() {
             Task:
             <input type="text" name="task" onChange={handleChange} value={task} />
           </label>
-          <button type="button" className="create-task-modal-create-button">
+          <button type="button" className="create-task-modal-create-button" onClick={() => handleClick()}>
             create
           </button>
         </div>
