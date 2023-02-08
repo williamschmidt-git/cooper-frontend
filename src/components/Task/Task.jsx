@@ -11,11 +11,9 @@ export default function Task({
   text, id, key, index, droppableId,
 }) {
   const {
-    // showEditTaskModal,
     setShowEditTaskModal,
     setIdRef,
   } = useContext(Context);
-  // console.log(id);
 
   const getcookie = () => {
     const token = document.cookie.split('=').pop();

@@ -15,12 +15,8 @@ export default function Main() {
       <Header />
       <Title />
       <SlideBackground />
-      {showLoginModal ? (
-        <LoginModal />
-      ) : null}
-      {showRegisterModal ? (
-        <RegisterModal />
-      ) : null}
+      {showLoginModal && <LoginModal />}
+      {showRegisterModal && <RegisterModal />}
     </>
   );
 }

@@ -5,7 +5,7 @@ import Context from '../../context/Context';
 import './index.css';
 import Task from '../Task/Task';
 // import Context from '../../context/Context';
-import { updateTask, listTasks } from '../../requests/task';
+import { updateTask, listTasks, deleteAll } from '../../requests/task';
 import CreateTaskModal from '../CreateTaskModal/CreateTaskModal';
 import EditTaskModal from '../EditTaskModal/EditTaskModal';
 
@@ -18,13 +18,13 @@ export default function DragAndDrop() {
     showEditTaskModal,
   } = useContext(Context);
 
-  const getcookie = () => {
+  const getCookie = () => {
     const token = document.cookie.split('=').pop();
     return token;
   };
 
   const requestGetApi = async () => {
-    const { tasks } = await listTasks(getcookie());
+    const { tasks } = await listTasks(getCookie());
 
     if (tasks) {
       const toDoTasksArray = tasks.filter((e) => e.isTaskDone === false);
@@ -63,18 +63,21 @@ export default function DragAndDrop() {
       const [removedItem] = items.splice(result.source.index, 1);
       items.splice(result.destination.index, 1, removedItem);
       removedItem.isTaskDone = true;
-      updateTask(getcookie(), removedItem);
+      updateTask(getCookie(), removedItem);
       setDoneBoard([...doneBoard, removedItem]);
       const newArr = todoTasks.filter((e) => e !== removedItem);
       setTodoTasks(newArr);
     }
   };
 
-  const handleEraseButton = (e) => {
+  const handleEraseButton = async (e) => {
     if (e.target.parentNode.className.includes('todo')) {
+      await deleteAll(getCookie(), todoTasks);
+      console.log(todoTasks);
       setTodoTasks([]);
     }
     if (e.target.parentNode.className.includes('done')) {
+      deleteAll(getCookie(), doneBoard);
       setDoneBoard([]);
     }
   };
@@ -89,10 +92,10 @@ export default function DragAndDrop() {
               <div className="top-border-todo" />
               <h3 className="board-todo-title">To-do</h3>
 
-              <text className="board-todo-head">
+              <h3 className="board-todo-head">
                 Take a breath.
                 Start doing.
-              </text>
+              </h3>
 
               <input
                 type="image"
@@ -125,11 +128,11 @@ export default function DragAndDrop() {
                   <div className="top-border-done" />
                   <h3 className="board-done-title">Done</h3>
 
-                  <text className="board-done-head">
+                  <h3 className="board-done-head">
                     Congratulations!
-                  </text>
+                  </h3>
 
-                  <text className="board-how-many-tasks-done-text">{`You have done ${doneBoard.length} tasks`}</text>
+                  <h4 className="board-how-many-tasks-done-text">{`You have done ${doneBoard.length} tasks`}</h4>
 
                   <div
                     {...innerProvided.droppableProps}

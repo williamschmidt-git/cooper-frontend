@@ -67,6 +67,21 @@ const deleteTask = async (token, id) => {
   return response.data;
 };
 
+const deleteAll = async (token, arrayToDelete) => {
+  const options = {
+    method: 'DELETE',
+    url: `${api.backend_url}task/`,
+    headers: {
+      'content-type': 'application/json',
+      Authorization: `Bearer ${token}`,
+    },
+    data: arrayToDelete,
+  };
+
+  const response = await axios(options);
+  return response.data;
+};
+
 export {
-  updateTask, listTasks, createTask, deleteTask,
+  updateTask, listTasks, createTask, deleteTask, deleteAll,
 };
