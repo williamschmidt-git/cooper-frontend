@@ -7,7 +7,8 @@ const login = async (user) => {
     method: 'POST',
     url: `${api.backend_url}login`,
     headers: {
-      'content-type': 'application/json',
+      Accept: 'application/json',
+      'Content-type': 'application/json',
     },
     data: {
       email: user.email,
