@@ -6,6 +6,7 @@ import Context from '../Context';
 function Provider({ children }) {
   const [showLoginModal, setShowLoginModal] = useState(false);
   const [showRegisterModal, setShowRegisterModal] = useState(false);
+  const [showCreateTaskModal, setShowCreateTaskModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
@@ -16,6 +17,8 @@ function Provider({ children }) {
       setShowRegisterModal,
       isLoggedIn,
       setIsLoggedIn,
+      showCreateTaskModal,
+      setShowCreateTaskModal,
     }}
     >
       {children}

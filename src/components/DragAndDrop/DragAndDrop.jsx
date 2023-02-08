@@ -1,15 +1,17 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect, useState } from 'react';
-import './index.css';
+import React, { useEffect, useState, useContext } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
+import Context from '../../context/Context';
+import './index.css';
 import Task from '../Task/Task';
 // import Context from '../../context/Context';
 import { updateTask, listTasks } from '../../requests/task';
+import CreateTaskModal from '../CreateTaskModal/CreateTaskModal';
 
 export default function DragAndDrop() {
-  // const { isLoggedIn } = useContext(Context);
   const [todoTasks, setTodoTasks] = useState([]);
   const [doneBoard, setDoneBoard] = useState([]);
+  const { setShowCreateTaskModal, showCreateTaskModal } = useContext(Context);
 
   const getcookie = () => {
     const token = document.cookie.split('=').pop();
@@ -18,7 +20,6 @@ export default function DragAndDrop() {
 
   const requestGetApi = async () => {
     const { tasks } = await listTasks(getcookie());
-    console.log(tasks);
 
     if (tasks) {
       const toDoTasksArray = tasks.filter((e) => e.isTaskDone === false);
@@ -37,31 +38,8 @@ export default function DragAndDrop() {
     getApi();
   }, []);
 
-  // const requestPatchApi = async () => {
-  //   const { tasks } = await listTasks(getcookie());
-
-  //   if (tasks) {
-  //     const formattedTasks = tasks.map((e) => ({
-  //       id: String(e.id),
-  //       isTaskDone: e.isTaskDone,
-  //       toDoTask: e.taskToDo,
-  //     }));
-
-  //     setTodoTasks([...formattedTasks]);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   const patchApi = async () => {
-  //     const response = await requestPatchApi();
-  //     return response;
-  //   };
-  //   patchApi();
-  // }, [setTodoTasks, setTodoTasks]);
-
   const handleOnDragEnd = (result) => {
     if (!result.destination) return;
-    // if (result.source.droppableId === 'doneTasks') return;
 
     if (result.destination.droppableId === result.source.droppableId) {
       const items = Array.from(todoTasks);
@@ -95,7 +73,6 @@ export default function DragAndDrop() {
       setDoneBoard([]);
     }
   };
-  console.log(todoTasks);
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
@@ -112,6 +89,13 @@ export default function DragAndDrop() {
                 Start doing.
               </text>
 
+              <input
+                type="image"
+                src="/assets/svgs/plus-svgrepo-com.svg"
+                alt="plus-circle"
+                className="add-btn"
+                onClick={() => setShowCreateTaskModal(true)}
+              />
               <div
                 {...provided.droppableProps}
                 ref={provided.innerRef}
@@ -164,6 +148,10 @@ export default function DragAndDrop() {
           </div>
         )}
       </Droppable>
+      {
+        showCreateTaskModal
+        && <CreateTaskModal />
+      }
     </DragDropContext>
   );
 }
