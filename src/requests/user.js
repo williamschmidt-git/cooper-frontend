@@ -3,8 +3,6 @@ import axios from 'axios';
 import api from './api';
 
 const createUser = async (user) => {
-  // console.log(api.backend_url);
-  // console.log(user);
   const options = {
     method: 'POST',
     url: `${api.backend_url}user`,

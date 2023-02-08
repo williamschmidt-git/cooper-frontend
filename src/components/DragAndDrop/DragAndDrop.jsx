@@ -1,21 +1,28 @@
 /* eslint-disable react/jsx-props-no-spreading */
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import { DragDropContext, Droppable } from 'react-beautiful-dnd';
 import Context from '../../context/Context';
 import './index.css';
 import Task from '../Task/Task';
-// import Context from '../../context/Context';
 import { updateTask, listTasks, deleteAll } from '../../requests/task';
 import CreateTaskModal from '../CreateTaskModal/CreateTaskModal';
 import EditTaskModal from '../EditTaskModal/EditTaskModal';
+import DeleteTaskModal from '../DeleteTaskModal/DeleteTaskModal';
 
 export default function DragAndDrop() {
-  const [todoTasks, setTodoTasks] = useState([]);
-  const [doneBoard, setDoneBoard] = useState([]);
+  // const [todoTasks, setTodoTasks] = useState([]);
+  // const [doneBoard, setDoneBoard] = useState([]);
+  // const [isLoading, setIsLoading] = useState(false);
+
   const {
     setShowCreateTaskModal,
     showCreateTaskModal,
     showEditTaskModal,
+    showDeleteTaskModal,
+    toDoTasks,
+    setToDoTasks,
+    doneBoard,
+    setDoneBoard,
   } = useContext(Context);
 
   const getCookie = () => {
@@ -23,39 +30,43 @@ export default function DragAndDrop() {
     return token;
   };
 
-  const requestGetApi = async () => {
-    const { tasks } = await listTasks(getCookie());
+  // const requestGetApi = async () => {
+  //   const { tasks } = await listTasks(getCookie());
 
-    if (tasks) {
+  //   if (tasks) {
+  //     const toDoTasksArray = tasks.filter((e) => e.isTaskDone === false);
+  //     const doneTasksArray = tasks.filter(((e) => e.isTaskDone !== false));
+
+  //     setTodoTasks([...toDoTasksArray]);
+  //     setDoneBoard([...doneTasksArray]);
+  //   }
+  // };
+
+  useEffect(() => {
+    async function requestGetApi() {
+      const { tasks } = await listTasks(getCookie());
       const toDoTasksArray = tasks.filter((e) => e.isTaskDone === false);
       const doneTasksArray = tasks.filter(((e) => e.isTaskDone !== false));
 
-      setTodoTasks([...toDoTasksArray]);
+      setToDoTasks([...toDoTasks, ...toDoTasksArray]);
       setDoneBoard([...doneTasksArray]);
     }
-  };
-
-  useEffect(() => {
-    const getApi = async () => {
-      const response = await requestGetApi();
-      return response;
-    };
-    getApi();
+    requestGetApi();
   }, []);
 
-  const handleOnDragEnd = (result) => {
+  const handleOnDragEnd = async (result) => {
     if (!result.destination) return;
 
-    if (result.destination.droppableId === result.source.droppableId) {
-      const items = Array.from(todoTasks);
-      const [reorderedItem] = items.splice(result.source.index, 1);
-      items.splice(result.destination.index, 0, reorderedItem);
+    // if (result.destination.droppableId === result.source.droppableId) {
+    //   const items = Array.from(todoTasks);
+    //   const [reorderedItem] = items.splice(result.source.index, 1);
+    //   items.splice(result.destination.index, 0, reorderedItem);
 
-      setTodoTasks(items);
-    }
+    //   setTodoTasks(items);
+    // }
 
     if (result.destination.droppableId === 'doneTasks') {
-      const items = Array.from(todoTasks);
+      const items = Array.from(toDoTasks);
       if (result.destination.droppableId === result.source.droppableId) {
         return;
       }
@@ -65,15 +76,15 @@ export default function DragAndDrop() {
       removedItem.isTaskDone = true;
       updateTask(getCookie(), removedItem);
       setDoneBoard([...doneBoard, removedItem]);
-      const newArr = todoTasks.filter((e) => e !== removedItem);
-      setTodoTasks(newArr);
+      const newArr = toDoTasks.filter((e) => e !== removedItem);
+      setToDoTasks(newArr);
     }
   };
 
   const handleEraseButton = async (e) => {
     if (e.target.parentNode.className.includes('todo')) {
-      await deleteAll(getCookie(), todoTasks);
-      setTodoTasks([]);
+      await deleteAll(getCookie(), toDoTasks);
+      setToDoTasks([]);
     }
     if (e.target.parentNode.className.includes('done')) {
       deleteAll(getCookie(), doneBoard);
@@ -83,7 +94,6 @@ export default function DragAndDrop() {
 
   return (
     <DragDropContext onDragEnd={handleOnDragEnd}>
-
       <Droppable droppableId="tasks">
         {(provided, snapshot) => (
           <section className="wrapper-todo-board">
@@ -108,11 +118,11 @@ export default function DragAndDrop() {
                 ref={provided.innerRef}
               >
                 {provided.placeholder}
-                {todoTasks.length > 0 && todoTasks.map((task, index) => (
+                {toDoTasks.length > 0 && toDoTasks.map((task, index) => (
                   <Task
                     text={task.taskToDo}
                     id={task.id.toString()}
-                    key={task.id}
+                    key={task.id.toString()}
                     index={index}
                     droppableId="tasks"
                   />
@@ -142,7 +152,7 @@ export default function DragAndDrop() {
                       <Task
                         text={task.taskToDo}
                         id={task.id.toString()}
-                        key={task.id}
+                        key={task.id.toString()}
                         index={index}
                         droppableId="doneTasks"
                       />
@@ -162,6 +172,10 @@ export default function DragAndDrop() {
       {
         showEditTaskModal
         && <EditTaskModal />
+      }
+      {
+        showDeleteTaskModal
+        && <DeleteTaskModal />
       }
     </DragDropContext>
   );

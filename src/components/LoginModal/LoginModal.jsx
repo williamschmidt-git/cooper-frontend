@@ -51,7 +51,7 @@ export default function LoginModal() {
 
         <div className="modal-body">
           <label htmlFor="user">
-            User:
+            E-mail:
             <input type="text" name="email" onChange={handleChange} value={user.email} />
           </label>
 

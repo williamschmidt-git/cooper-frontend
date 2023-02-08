@@ -20,8 +20,6 @@ const createTask = async (token, task) => {
 };
 
 const listTasks = async (token) => {
-  // console.log(api.backend_url);
-  // console.log(user);
   const options = {
     method: 'GET',
     url: `${api.backend_url}task/`,
@@ -32,7 +30,6 @@ const listTasks = async (token) => {
   };
 
   const response = await axios(options);
-  // console.log(response);
   return response.data;
 };
 

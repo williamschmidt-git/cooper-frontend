@@ -5,23 +5,19 @@ import PropTypes from 'prop-types';
 import './index.css';
 import { Draggable } from 'react-beautiful-dnd';
 import Context from '../../context/Context';
-import { deleteTask } from '../../requests/task';
 
 export default function Task({
-  text, id, key, index, droppableId,
+  text, id, index, droppableId,
 }) {
   const {
     setShowEditTaskModal,
+    setShowDeleteTaskModal,
     setIdRef,
   } = useContext(Context);
 
-  const getcookie = () => {
-    const token = document.cookie.split('=').pop();
-    return token;
-  };
-
   const handleDelete = (taskId) => {
-    deleteTask(getcookie(), taskId);
+    setIdRef(taskId);
+    setShowDeleteTaskModal(true);
   };
 
   const handleUpdate = (taskId) => {
@@ -39,7 +35,7 @@ export default function Task({
           ref={provided.innerRef}
         >
           {droppableId === 'tasks' ? (
-            <div key={key} className="input-wrapper">
+            <div className="input-wrapper">
               <input type="radio" id={id} name="task" />
               <label
                 htmlFor={id}
@@ -68,8 +64,8 @@ export default function Task({
               </div>
             </div>
           ) : (
-            <div key={key}>
-              <input type="radio" id={id} checked />
+            <div>
+              <input type="radio" id={id} defaultChecked />
               <label
                 htmlFor={id}
                 className="board-todo-task-text"
@@ -89,8 +85,7 @@ export default function Task({
 }
 
 Task.propTypes = {
-  id: PropTypes.number.isRequired,
-  key: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
   index: PropTypes.number.isRequired,
   droppableId: PropTypes.string.isRequired,

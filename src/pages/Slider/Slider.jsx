@@ -10,14 +10,17 @@ import 'slick-carousel/slick/slick-theme.css';
 export default function SliderComponent() {
   const [content] = useState([
     {
+      id: 1,
       text: 'Organize your daily job enhance your life performance',
       img: 'assets/imgs/bitmap.png',
     },
     {
+      id: 2,
       text: 'Mark one activity as done makes your brain understands the power of doing.',
       img: 'assets/imgs/bitmap (1).png',
     },
     {
+      id: 3,
       text: 'Careful with missunderstanding the difference between a list of things and a list of desires.',
       img: 'assets/imgs/bitmap (2).png',
     },
@@ -36,7 +39,7 @@ export default function SliderComponent() {
       <BackgroundPanelSlider />
       <Slider {...settings} className="slider-wrapper">
         {content.map((e) => (
-          <Cards text={e.text} src={e.img} />
+          <Cards text={e.text} src={e.img} key={e.id} />
         ))}
       </Slider>
     </>

@@ -4,7 +4,9 @@ import { updateTask } from '../../requests/task';
 import './index.css';
 
 export default function EditTaskModal() {
-  const { setShowEditTaskModal, idRef } = useContext(Context);
+  const {
+    setShowEditTaskModal, idRef, toDoTasks,
+  } = useContext(Context);
   const [task, setTask] = useState('');
 
   const handleChange = (e) => {
@@ -23,6 +25,12 @@ export default function EditTaskModal() {
       taskToDo: task,
     };
     await updateTask(getcookie(), obj);
+
+    const items = Array.from(toDoTasks);
+    const [filteredItem] = items.filter((e) => e.id === Number(idRef));
+
+    const newItem = filteredItem;
+    newItem.taskToDo = task;
 
     setShowEditTaskModal(false);
   };

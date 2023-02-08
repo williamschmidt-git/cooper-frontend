@@ -15,9 +15,9 @@ export default function Title() {
       <div className="Title">
         <h1 className="title-first-text">
           Organize
-          <h1 className="title-second-text">
+          <p className="title-second-text">
             your daily jobs
-          </h1>
+          </p>
         </h1>
         <p className="title-third-text">The only way to get things done</p>
         <button type="button" className="title-button" onClick={handleClickScroll}>Go to To-do list</button>

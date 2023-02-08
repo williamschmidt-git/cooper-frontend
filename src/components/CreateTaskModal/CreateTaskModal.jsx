@@ -4,8 +4,9 @@ import { createTask } from '../../requests/task';
 import './index.css';
 
 export default function CreateTaskModal() {
-  const { setShowCreateTaskModal } = useContext(Context);
+  const { setShowCreateTaskModal, setToDoTasks, toDoTasks } = useContext(Context);
   const [task, setTask] = useState('');
+  // const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { value } = e.target;
@@ -18,7 +19,8 @@ export default function CreateTaskModal() {
   };
 
   const handleClick = async () => {
-    await createTask(getcookie(), task);
+    const response = await createTask(getcookie(), task);
+    setToDoTasks([...toDoTasks, response.task]);
     setShowCreateTaskModal(false);
   };
 
