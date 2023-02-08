@@ -86,7 +86,7 @@ export default function DragAndDrop() {
 
       <Droppable droppableId="tasks">
         {(provided, snapshot) => (
-          <div className="wrapper-todo-board">
+          <section className="wrapper-todo-board">
             <div className={snapshot.isDraggingOver ? 'board-todo-tasks-active' : 'board-todo-tasks'}>
               <div className="top-border-todo" />
               <h3 className="board-todo-title">To-do</h3>
@@ -152,7 +152,7 @@ export default function DragAndDrop() {
                 </div>
               )}
             </Droppable>
-          </div>
+          </section>
         )}
       </Droppable>
       {
