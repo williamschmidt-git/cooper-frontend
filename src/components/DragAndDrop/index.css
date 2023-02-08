@@ -81,10 +81,6 @@
   transition: background-color 0.2s ease;
 }
 
-/* .task-list-active {
-  background-color: #4AC959; 
-} */
-
 .board-todo-task {
   font-family: 'Montserrat';
   font-weight: 400;
@@ -300,6 +296,10 @@
   .board-todo-head {
     font-size: 40px;
   }
+
+  .add-btn {
+    height: 30px;
+  }
   
   .board-todo-tasks {
     height: auto;
@@ -347,5 +347,9 @@
 @media screen and (min-width: 1680px) {
   .wrapper-todo-board {
     margin-top: 375px;
+  }
+  
+  .add-btn {
+    height: 40px;
   }
 }

@@ -61,3 +61,25 @@
   font-weight: 600;
   color: black;
 }
+
+@media screen and (min-width: 1024px) {  
+  .create-task-modal-content {
+    max-width: 90%;
+    max-height: 90%;
+    width: 40%;
+  }
+
+  .create-task-modal-header > h4 {
+    font-size: 34px;
+  }
+  
+  .create-task-modal-create-button {
+    width: 60%;
+    height: 40px;
+    font-size: large;
+  }
+  
+  .create-task-modal-close-button {
+    font-size: larger;
+  }
+}
