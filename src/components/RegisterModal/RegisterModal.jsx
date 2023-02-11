@@ -35,7 +35,7 @@ export default function RegisterModal() {
 
     if (data.message) {
       setIsReady(true);
-      setApiMessage(data.message);
+      setApiMessage(`${data.message} Logging in...`);
     }
 
     if (data.token) {
