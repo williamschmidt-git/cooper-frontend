@@ -17,6 +17,7 @@ const createUser = async (user) => {
   };
 
   const response = await axios(options);
+  console.log(response);
   return response.data;
 };
 
