@@ -4,7 +4,9 @@ import createUser from '../../requests/user';
 import './index.css';
 
 export default function RegisterModal() {
-  const { setShowRegisterModal } = useContext(Context);
+  const {
+    setShowRegisterModal, setRerender, rerender, setToDoTasks, setDoneBoard,
+  } = useContext(Context);
   const [user, setUser] = useState({
     email: '',
     username: '',
@@ -13,6 +15,13 @@ export default function RegisterModal() {
 
   const [apiMessage, setApiMessage] = useState('');
   const [isReady, setIsReady] = useState(false);
+
+  const createTokenCookie = (token) => {
+    const now = new Date();
+    now.setDate(now.getDate() + 7);
+
+    document.cookie = `token=${token}; expires=${now.toUTCString()}`;
+  };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +35,14 @@ export default function RegisterModal() {
 
     if (data.message) {
       setIsReady(true);
-      setApiMessage(data.message);
+      setApiMessage(`${data.message} Logging in...`);
+    }
+
+    if (data.token) {
+      createTokenCookie(data.token);
+      setRerender(!rerender);
+      setToDoTasks([]);
+      setDoneBoard([]);
     }
   };
 
@@ -72,7 +88,12 @@ export default function RegisterModal() {
         </button>
       </div>
       {isReady
-        && alert(apiMessage)}
+        && (
+          <>
+            {alert(apiMessage)}
+            {setShowRegisterModal(false)}
+          </>
+        )}
     </div>
   );
 }

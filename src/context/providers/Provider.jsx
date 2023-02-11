@@ -12,6 +12,7 @@ function Provider({ children }) {
   const [showEditTaskModal, setShowEditTaskModal] = useState(false);
   const [showDeleteTaskModal, setShowDeleteTaskModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [rerender, setRerender] = useState(false);
   const [idRef, setIdRef] = useState(999);
 
   return (
@@ -34,6 +35,8 @@ function Provider({ children }) {
       setShowDeleteTaskModal,
       idRef,
       setIdRef,
+      rerender,
+      setRerender,
     }}
     >
       {children}

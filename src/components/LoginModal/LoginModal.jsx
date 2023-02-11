@@ -4,13 +4,12 @@ import login from '../../requests/login';
 import './index.css';
 
 export default function LoginModal() {
-  const { setShowLoginModal } = useContext(Context);
+  const { setShowLoginModal, setToDoTasks, setDoneBoard } = useContext(Context);
 
   const [user, setUser] = useState({
     email: '',
     password: '',
   });
-
   const [isReady, setIsReady] = useState(false);
 
   const createTokenCookie = (token) => {
@@ -33,6 +32,12 @@ export default function LoginModal() {
     if (data.token) {
       createTokenCookie(data.token);
       setIsReady(true);
+
+      const toDoTasksArray = data.tasks.filter((e) => e.isTaskDone === false);
+      const doneTasksArray = data.tasks.filter(((e) => e.isTaskDone !== false));
+
+      setToDoTasks([...toDoTasksArray]);
+      setDoneBoard([...doneTasksArray]);
     }
   };
 

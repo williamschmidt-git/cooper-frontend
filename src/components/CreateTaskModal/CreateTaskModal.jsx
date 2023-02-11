@@ -6,7 +6,6 @@ import './index.css';
 export default function CreateTaskModal() {
   const { setShowCreateTaskModal, setToDoTasks, toDoTasks } = useContext(Context);
   const [task, setTask] = useState('');
-  // const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
     const { value } = e.target;
