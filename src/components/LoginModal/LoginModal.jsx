@@ -4,7 +4,9 @@ import login from '../../requests/login';
 import './index.css';
 
 export default function LoginModal() {
-  const { setShowLoginModal, setToDoTasks, setDoneBoard } = useContext(Context);
+  const {
+    setShowLoginModal, setToDoTasks, setDoneBoard, setIsLoggedIn,
+  } = useContext(Context);
 
   const [user, setUser] = useState({
     email: '',
@@ -38,6 +40,7 @@ export default function LoginModal() {
 
       setToDoTasks([...toDoTasksArray]);
       setDoneBoard([...doneTasksArray]);
+      setIsLoggedIn(true);
     }
   };
 

@@ -6,6 +6,7 @@ import './index.css';
 export default function RegisterModal() {
   const {
     setShowRegisterModal, setRerender, rerender, setToDoTasks, setDoneBoard,
+    setIsLoggedIn,
   } = useContext(Context);
   const [user, setUser] = useState({
     email: '',
@@ -43,6 +44,7 @@ export default function RegisterModal() {
       setRerender(!rerender);
       setToDoTasks([]);
       setDoneBoard([]);
+      setIsLoggedIn(true);
     }
   };
 

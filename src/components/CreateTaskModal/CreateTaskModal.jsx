@@ -1,10 +1,13 @@
+/* eslint-disable consistent-return */
 import React, { useContext, useState } from 'react';
 import Context from '../../context/Context';
 import { createTask } from '../../requests/task';
 import './index.css';
 
 export default function CreateTaskModal() {
-  const { setShowCreateTaskModal, setToDoTasks, toDoTasks } = useContext(Context);
+  const {
+    setShowCreateTaskModal, setToDoTasks, toDoTasks, isLoggedIn,
+  } = useContext(Context);
   const [task, setTask] = useState('');
 
   const handleChange = (e) => {
@@ -17,11 +20,15 @@ export default function CreateTaskModal() {
     return token;
   };
 
-  const handleClick = async () => {
-    const response = await createTask(getcookie(), task);
-    setToDoTasks([...toDoTasks, response.task]);
-    setShowCreateTaskModal(false);
-  };
+  async function handleClick() {
+    if (isLoggedIn) {
+      const response = await createTask(getcookie(), task);
+      setToDoTasks([...toDoTasks, response.task]);
+      setShowCreateTaskModal(false);
+    } else {
+      return alert('You need to login first!');
+    }
+  }
 
   return (
     <div className="create-task-modal">
