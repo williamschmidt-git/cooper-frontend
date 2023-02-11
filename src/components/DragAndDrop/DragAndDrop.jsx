@@ -10,10 +10,6 @@ import EditTaskModal from '../EditTaskModal/EditTaskModal';
 import DeleteTaskModal from '../DeleteTaskModal/DeleteTaskModal';
 
 export default function DragAndDrop() {
-  // const [todoTasks, setTodoTasks] = useState([]);
-  // const [doneBoard, setDoneBoard] = useState([]);
-  // const [isLoading, setIsLoading] = useState(false);
-
   const {
     setShowCreateTaskModal,
     showCreateTaskModal,
@@ -30,18 +26,6 @@ export default function DragAndDrop() {
     return token;
   };
 
-  // const requestGetApi = async () => {
-  //   const { tasks } = await listTasks(getCookie());
-
-  //   if (tasks) {
-  //     const toDoTasksArray = tasks.filter((e) => e.isTaskDone === false);
-  //     const doneTasksArray = tasks.filter(((e) => e.isTaskDone !== false));
-
-  //     setTodoTasks([...toDoTasksArray]);
-  //     setDoneBoard([...doneTasksArray]);
-  //   }
-  // };
-
   useEffect(() => {
     async function requestGetApi() {
       const { tasks } = await listTasks(getCookie());
@@ -56,14 +40,6 @@ export default function DragAndDrop() {
 
   const handleOnDragEnd = async (result) => {
     if (!result.destination) return;
-
-    // if (result.destination.droppableId === result.source.droppableId) {
-    //   const items = Array.from(todoTasks);
-    //   const [reorderedItem] = items.splice(result.source.index, 1);
-    //   items.splice(result.destination.index, 0, reorderedItem);
-
-    //   setTodoTasks(items);
-    // }
 
     if (result.destination.droppableId === 'doneTasks') {
       const items = Array.from(toDoTasks);
