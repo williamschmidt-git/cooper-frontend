@@ -16,9 +16,7 @@
 
 .modal-content {
   max-width: 90%;
-  /* max-height: 100%; */
   height: 600px;
-  /* left: -153px; */
   overflow-x: hidden;
   overflow-y: auto;
   outline-width: none;
