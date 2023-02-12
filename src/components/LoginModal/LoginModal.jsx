@@ -46,7 +46,7 @@ export default function LoginModal() {
 
   return (
     <div className="modal">
-      <div className="modal-content">
+      <div className="modal-content-login">
         <button className="close-button" type="button" onClick={() => setShowLoginModal(false)}>close</button>
 
         <div className="modal-header">
